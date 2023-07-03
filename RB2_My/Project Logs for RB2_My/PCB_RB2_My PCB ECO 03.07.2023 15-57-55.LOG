@@ -1,0 +1,9 @@
+Added Component: Designator=SA1(DS1040-02RN)
+Add component (AddParameter): Name = "manufacture"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "Переключатель"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name_main"; Value = "DS1040-02RN"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=NetR36_1 Pin=SA1-1
+Added Pin To Net: NetName=NetC6_2 Pin=SA1-2
+Added Pin To Net: NetName=NetR37_1 Pin=SA1-3
+Added Pin To Net: NetName=NetC7_2 Pin=SA1-4
+Added Member To Class: ClassName=RB2_My Member=Component SA1 DS1040-02RN
