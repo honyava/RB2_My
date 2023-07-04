@@ -1,0 +1,6 @@
+Change Component Designator: OldDesignator=C1 NewDesignator=Ñ1
+Added Pin To Net: NetName=NetC1_1 Pin=X1-20
+Added Pin To Net: NetName=NetC1_1 Pin=X2-30B
+Change Net Name : Old Net Name=NetC1_1 New Net Name=+5Â
+Added Member To Class: ClassName=RB2_My Member=Component Ñ1 Ê10-17â-Í90-0,1ìêÔ-3ÎÆÎ.460.107ÒÓ
+Added Room: Name=RB2_My
