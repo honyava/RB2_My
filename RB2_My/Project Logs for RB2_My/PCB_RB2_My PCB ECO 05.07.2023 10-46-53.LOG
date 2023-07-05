@@ -1,0 +1,32 @@
+Added Component: Designator=X2(ГРПМ9-62ШУ2-В)
+Add component (AddParameter): Name = "manufacture"; Value = "Ке0.364.009ТУ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name_main"; Value = "ГРПМ9-62ШУ2-В"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=X2-1B
+Added Pin To Net: NetName=Имп. 0 Pin=X2-2A
+Added Pin To Net: NetName=Имп. 1 Pin=X2-2B
+Added Pin To Net: NetName=Имп. 2 Pin=X2-3A
+Added Pin To Net: NetName=Имп. 3 Pin=X2-3B
+Added Pin To Net: NetName=Имп. 4 Pin=X2-4A
+Added Pin To Net: NetName=Режим Pin=X2-4B
+Added Pin To Net: NetName=Имп. 5 Pin=X2-5A
+Added Pin To Net: NetName=Имп. 6 Pin=X2-5B
+Added Pin To Net: NetName=Имп. 3МГц Pin=X2-6A
+Added Pin To Net: NetName=Имп. ПЗ АПД Pin=X2-6B
+Added Pin To Net: NetName=Имп. 1 ПРД 1к Pin=X2-7A
+Added Pin To Net: NetName=Имп. 1 ПРД 2к Pin=X2-7B
+Added Pin To Net: NetName=Призн. 1мкс Pin=X2-8A
+Added Pin To Net: NetName=Призн. 2мкс Pin=X2-8B
+Added Pin To Net: NetName=Внеш. зап. лог. 1 Pin=X2-13A
+Added Pin To Net: NetName=Имп. 3МГц инв. Pin=X2-14B
+Added Pin To Net: NetName=Имп. 3МГц Pin=X2-20A
+Added Pin To Net: NetName=+27В вкл. 2мкс Pin=X2-24A
+Added Pin To Net: NetName=+27В 2мкс Pin=X2-24B
+Added Pin To Net: NetName=Лог.1 Pin=X2-27B
+Added Pin To Net: NetName=Внеш. зап. лог. 1 Pin=X2-28A
+Added Pin To Net: NetName=Имп. 3МГц Pin=X2-28B
+Added Pin To Net: NetName=Внеш. зап. 15В Pin=X2-29B
+Added Pin To Net: NetName=+5В Pin=X2-30A
+Added Pin To Net: NetName=+5В Pin=X2-30B
+Added Pin To Net: NetName=GND Pin=X2-31B
+Added Member To Class: ClassName=RB2_My Member=Component X2 ГРПМ9-62ШУ2-В
+Added Room: Name=RB2_My
