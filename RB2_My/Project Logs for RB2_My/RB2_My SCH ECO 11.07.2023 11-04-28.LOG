@@ -1,0 +1,51 @@
+Remove Pin=DA2-34 From Net=Внеш. зап. лог. 1
+Remove Pin=DA2-52 From Net=Призн. 1мкс
+Remove Pin=R11-1 From Net=Имп. 1 ПРД 1к
+Remove Pin=R12-1 From Net=Имп. 1 ПРД 2к
+Remove Pin=R13-1 From Net=+27В 2мкс
+Remove Pin=R15-1 From Net=Внеш. зап. 15В
+Remove Pin=R16-1 From Net=Режим
+Remove Pin=R17-1 From Net=+27В вкл. 2мкс
+Remove Pin=X1-1 From Net=Имп. 3МГц
+Remove Pin=X1-2 From Net=Имп. 0
+Remove Pin=X1-3 From Net=Имп. 1
+Remove Pin=X1-4 From Net=Имп. 2
+Remove Pin=X1-5 From Net=Имп. 3
+Remove Pin=X1-6 From Net=Имп. 4
+Remove Pin=X1-7 From Net=Имп. 5
+Remove Pin=X1-8 From Net=Имп. 6
+Remove Pin=X1-9 From Net=Имп. ПЗ АПД
+Remove Pin=X1-10 From Net=Имп. 1 ПРД 1к
+Remove Pin=X1-11 From Net=Имп. 1 ПРД 2к
+Remove Pin=X1-12 From Net=Призн. 1мкс
+Remove Pin=X1-13 From Net=Призн. 2мкс
+Remove Pin=X1-14 From Net=+27В 2мкс
+Remove Pin=X1-15 From Net=Лог.1
+Remove Pin=X1-16 From Net=Внеш. зап. 15В
+Remove Pin=X1-17 From Net=Внеш. зап. лог. 1
+Remove Pin=X1-18 From Net=Режим
+Remove Pin=X1-19 From Net=+27В вкл. 2мкс
+Remove Pin=X1-20 From Net=+5В
+Remove Pin=X1-21 From Net=GND
+Remove Pin=X1-22 From Net=+3,3В
+Remove Pin=X2A-2A From Net=Имп. 0
+Remove Pin=X2B-2B From Net=Имп. 1
+Remove Pin=X2A-3A From Net=Имп. 2
+Remove Pin=X2B-3B From Net=Имп. 3
+Remove Pin=X2A-4A From Net=Имп. 4
+Remove Pin=X2B-4B From Net=Режим
+Remove Pin=X2A-5A From Net=Имп. 5
+Remove Pin=X2B-5B From Net=Имп. 6
+Remove Pin=X2A-6A From Net=Имп. 3МГц
+Remove Pin=X2B-6B From Net=Имп. ПЗ АПД
+Remove Pin=X2A-7A From Net=Имп. 1 ПРД 1к
+Remove Pin=X2B-7B From Net=Имп. 1 ПРД 2к
+Remove Pin=X2A-8A From Net=Призн. 1мкс
+Remove Pin=X2B-14B From Net=Имп. 3МГц инв.
+Remove Pin=X2A-20A From Net=Имп. 3МГц
+Remove Pin=X2A-24A From Net=+27В вкл. 2мкс
+Remove Pin=X2B-24B From Net=+27В 2мкс
+Remove Pin=X2B-27B From Net=Лог.1
+Remove Pin=X2B-28B From Net=Имп. 3МГц
+Remove Pin=X2B-29B From Net=Внеш. зап. 15В
+Remove Pin=X2B-30B From Net=+5В

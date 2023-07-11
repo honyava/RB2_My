@@ -1,57 +1,69 @@
 Protel Design System Design Rule Check
 PCB File : D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My.PcbDoc
-Date     : 07.07.2023
-Time     : 9:50:16
-
-Processing Rule : Clearance Constraint (Gap=0mm) ((IsPad and not    InPadClass('ThermoPads')) or IsVia),((IsPad and not    InPadClass('ThermoPads')) or IsVia)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0.125mm) (HasFootprint('LFCSP_WQ 5x5mm')      or    HasFootprint('UFQFPN-32 5x5mm')),(All)
-Rule Violations :0
+Date     : 11.07.2023
+Time     : 9:38:18
 
 Processing Rule : Clearance Constraint (Gap=0.25mm) (OnMid),(isvia    or IsPad)
 Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.125mm) (All),(All)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0.3mm) (InNetClass('SPI')),(All)
-Rule Violations :0
+   Violation between Clearance Constraint: (Collision < 0.125mm) Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Track (51.6mm,76.9mm)(53.05mm,76.9mm) on Top 
+   Violation between Clearance Constraint: (Collision < 0.125mm) Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Track (53.05mm,76.9mm)(53.075mm,76.925mm) on Top 
+Rule Violations :2
 
 Processing Rule : Clearance Constraint (Gap=0mm) (IsKeepOut),(All)
 Rule Violations :0
 
-Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+Processing Rule : Clearance Constraint (Gap=0mm) ((IsPad and not    InPadClass('ThermoPads')) or IsVia),((IsPad and not    InPadClass('ThermoPads')) or IsVia)
+   Violation between Clearance Constraint: (Collision < 0.125mm) Between Pad R3-1(51.6mm,76.9mm) on Top And Pad X4-3(52.74mm,75.84mm) on Multi-Layer 
+   Violation between Clearance Constraint: (Collision < 0.125mm) Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Via (53.075mm,76.925mm) from Top to Bottom 
+Rule Violations :2
+
+Processing Rule : Clearance Constraint (Gap=0mm) (HasFootprint('CAPC3419X15N(1206)')),(All)
+   Violation between Clearance Constraint: (0.675mm < 0.8mm) Between Pad C13-1(111mm,110mm) on Top And Pad R45-1(112.125mm,108.325mm) on Top 
+Rule Violations :1
+
+Processing Rule : Clearance Constraint (Gap=0mm) (All),((HasFootprint('ямо347-20бо22-б') AND HasFootprint('ямо268-25по32-1-4-б') AND HasFootprint('ямо268-9бо32-1-4-б') AND HasFootprint('цпол9-62ьс2-б') AND HasFootprint('HYR-1149') AND HasFootprint('DS1040-02RN')))
 Rule Violations :0
+
+Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
+   Violation between Short-Circuit Constraint: Between Pad R3-1(51.6mm,76.9mm) on Top And Pad X4-3(52.74mm,75.84mm) on Multi-Layer Location : [X = 77.233mm][Y = 102.116mm]
+   Violation between Short-Circuit Constraint: Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Track (51.6mm,76.9mm)(53.05mm,76.9mm) on Top Location : [X = 78.009mm][Y = 102.4mm]
+   Violation between Short-Circuit Constraint: Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Track (53.05mm,76.9mm)(53.075mm,76.925mm) on Top Location : [X = 78.562mm][Y = 102.413mm]
+   Violation between Short-Circuit Constraint: Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Via (53.075mm,76.925mm) from Top to Bottom Location : [X = 78.575mm][Y = 102.355mm]
+Rule Violations :4
 
 Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Net GND Between Pad C3-2(108.8mm,94.3mm) on Top And Pad C10-2(108.8mm,97.4mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad DA2-30(140.25mm,97.55mm) on Top And Pad C11-2(149.3mm,98.3mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad DA2-15(127.6mm,88.9mm) on Top And Pad C12-2(128.525mm,80.775mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad R32-1(110.55mm,106.55mm) on Top And Pad C13-2(111mm,113.4mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad C4-2(149.2mm,109.8mm) on Top And Pad C14-2(150.925mm,114.9mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad DA1-2(169.4mm,34.85mm) on Multi-Layer And Pad C2-2(182.125mm,37.5mm) on Top 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad DA1-2(161.9mm,34.85mm) on Multi-Layer And Pad C2-2(182.125mm,37.5mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Via (137.675mm,111.225mm) from Top to Bottom And Pad C4-2(149.2mm,109.8mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad C4-2(149.2mm,109.8mm) on Top And Via (152.65mm,101.05mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad DA2-19(131.6mm,88.9mm) on Top And Pad C5-2(133.1mm,80.8mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Via (106.525mm,44.475mm) from Top to Bottom And Pad C8-2(106.925mm,77.65mm) on Top 
+   Violation between Un-Routed Net Constraint: Net +5б Between Pad DA1-1(161.9mm,32.3mm) on Multi-Layer And Via (164.125mm,40.9mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net +3,3б Between Pad DA1-3(161.9mm,37.4mm) on Multi-Layer And Track (169.4mm,37.4mm)(169.5mm,37.5mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Via (97.85mm,33.05mm) from Top to Bottom And Pad DD1-15(100.84mm,22.97mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad R21-2(116.5mm,123.3mm) on Top And Via (127.625mm,124.725mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad R24-2(163.5mm,93.3mm) on Top And Pad VD5-1(170.7mm,98.8mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad R24-2(163.4mm,93mm) on Top And Pad VD5-1(170.7mm,98.8mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net NetR3_2 Between Pad R3-2(50mm,76.9mm) on Top And Pad X4-1(50.2mm,73.3mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad R34-1(103.1mm,100.7mm) on Top And Via (106.95mm,100.675mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X3-2(52.74mm,62.56mm) on Multi-Layer And Pad R5-1(55.7mm,62.6mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Via (53.075mm,76.925mm) from Top to Bottom And Pad VD1-1(57mm,76.4mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (55.725mm,63.925mm) from Top to Bottom And Pad VD1-1(57mm,76.4mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad VD2-1(120.1mm,133.7mm) on Multi-Layer And Pad VD3-1(124.6mm,133.7mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad VD3-1(124.6mm,133.7mm) on Multi-Layer And Via (127.625mm,124.725mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Pad VD4-1(170.675mm,102.125mm) on Multi-Layer And Pad VD5-1(170.7mm,98.8mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad VD4-1(170.675mm,102.125mm) on Multi-Layer And Pad X2-1B(191.6mm,141.05mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (128.525mm,79.25mm) from Top to Bottom And Pad VD6-2(128.65mm,75.4mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (128.6mm,79.2mm) from Top to Bottom And Pad VD6-2(128.65mm,75.4mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad VD8-2(156.95mm,86.5mm) on Multi-Layer And Pad VD7-2(156.95mm,93.3mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Via (150.625mm,98.325mm) from Top to Bottom And Pad VD7-2(156.95mm,93.3mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad VD7-2(156.95mm,93.3mm) on Multi-Layer And Via (162.2mm,93.3mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad VD7-2(156.95mm,93.3mm) on Multi-Layer And Via (162.1mm,93mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X1-21(9.76mm,138.625mm) on Multi-Layer And Pad X5-16(61.24mm,139.42mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Via (184.2mm,28.525mm) from Top to Bottom And Pad X2-31B(191.6mm,28.55mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad X4-2(52.54mm,80.46mm) on Multi-Layer And Via (53.075mm,76.925mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad X3-2(52.74mm,62.56mm) on Multi-Layer And Pad X4-2(52.74mm,70.76mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad X4-2(52.74mm,70.76mm) on Multi-Layer And Track (51.6mm,76.9mm)(53.05mm,76.9mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-12(61.24mm,144.5mm) on Multi-Layer And Pad X5-10(61.24mm,147.04mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-10(61.24mm,147.04mm) on Multi-Layer And Pad X5-8(61.24mm,149.58mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-14(61.24mm,141.96mm) on Multi-Layer And Pad X5-12(61.24mm,144.5mm) on Multi-Layer 
@@ -62,29 +74,29 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-6(61.24mm,152.12mm) on Multi-Layer And Pad X5-4(61.24mm,154.66mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-8(61.24mm,149.58mm) on Multi-Layer And Pad X5-6(61.24mm,152.12mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X6-5(81.4mm,21.5mm) on Multi-Layer And Track (100.84mm,19.835mm)(100.84mm,22.97mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Track (106.8mm,82.075mm)(106.825mm,82.05mm) on Top And Via (108.8mm,92.25mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (106.8mm,82.575mm)(106.825mm,82.55mm) on Top And Via (108.8mm,92.25mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (100.85mm,19.825mm) from Top to Bottom And Via (102.75mm,15.95mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (101.4mm,109.7mm) from Top to Bottom And Via (101.475mm,105.075mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (101.475mm,105.075mm) from Top to Bottom And Via (101.55mm,100.725mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (102.75mm,15.95mm) from Top to Bottom And Via (184.2mm,28.525mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (97.85mm,33.05mm) from Top to Bottom And Via (106.525mm,44.475mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (106.825mm,81.3mm) from Top to Bottom And Via (106.9mm,78.95mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (106.875mm,104.125mm) from Top to Bottom And Via (106.95mm,100.675mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (106.875mm,104.125mm) from Top to Bottom And Via (109.075mm,106.525mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (106.8mm,81.025mm) from Top to Bottom And Via (106.9mm,78.95mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (106.95mm,100.675mm) from Top to Bottom And Via (107.05mm,97.4mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (112.975mm,113.4mm) from Top to Bottom And Via (120.5mm,111.175mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (120.5mm,111.175mm) from Top to Bottom And Via (121.2mm,97.575mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (121.2mm,97.575mm) from Top to Bottom And Via (127.575mm,92.4mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (122.625mm,79.275mm) from Top to Bottom And Via (128.525mm,79.25mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (122.625mm,79.275mm) from Top to Bottom And Via (128.6mm,79.2mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (127.575mm,92.4mm) from Top to Bottom And Via (131.575mm,92.375mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (127.625mm,124.725mm) from Top to Bottom And Via (137.675mm,111.225mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (128.525mm,79.25mm) from Top to Bottom And Via (133.075mm,79.175mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (128.6mm,79.2mm) from Top to Bottom And Via (133.075mm,79.175mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (131.575mm,92.375mm) from Top to Bottom And Via (136.8mm,97.6mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (150.625mm,98.325mm) from Top to Bottom And Via (152.65mm,101.05mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (184.05mm,37.475mm) from Top to Bottom And Via (184.2mm,28.525mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (55.725mm,63.925mm) from Top to Bottom And Via (88.825mm,40.575mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (88.825mm,40.575mm) from Top to Bottom And Via (97.85mm,33.05mm) from Top to Bottom 
-Rule Violations :59
+Rule Violations :62
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -117,41 +129,31 @@ Processing Rule : Pads and Vias to follow the Drill pairs settings
 Rule Violations :0
 
 Processing Rule : Hole To Hole Clearance (Gap=0.25mm) (All),(All)
-Rule Violations :0
+   Violation between Hole To Hole Clearance Constraint: (Collision < 0.25mm) Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Via (53.075mm,76.925mm) from Top to Bottom Pad/Via Touching Holes
+Rule Violations :1
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.15mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
-   Violation between Silk To Solder Mask Clearance Constraint: (0.129mm < 0.15mm) Between Arc (143.538mm,117.412mm) on Top Overlay And Pad C14-1(144.875mm,114.9mm) on Top [Top Overlay] to [Top Solder] clearance [0.129mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (0.129mm < 0.15mm) Between Arc (174.738mm,40.012mm) on Top Overlay And Pad C2-1(176.075mm,37.5mm) on Top [Top Overlay] to [Top Solder] clearance [0.129mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (0.129mm < 0.15mm) Between Arc (174.838mm,31.112mm) on Top Overlay And Pad C1-1(176.175mm,28.6mm) on Top [Top Overlay] to [Top Solder] clearance [0.129mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad R22-1(127.6mm,121.7mm) on Top And Text "R14" (127.038mm,121.904mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (0.063mm < 0.15mm) Between Pad R6-2(58.5mm,65.3mm) on Top And Text "R5" (55.221mm,63.883mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.063mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad X3-2(52.74mm,62.56mm) on Multi-Layer And Text "R2" (49.735mm,60.682mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad X4-2(52.54mm,80.46mm) on Multi-Layer And Text "R3" (49.705mm,77.913mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-Rule Violations :7
+   Violation between Silk To Solder Mask Clearance Constraint: (0.023mm < 0.15mm) Between Pad R3-1(51.6mm,76.9mm) on Top And Track (49.4mm,76.8mm)(51.1mm,76.8mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.023mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad R3-2(50mm,76.9mm) on Top And Track (49.4mm,76.8mm)(51.1mm,76.8mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad X4-1(50.2mm,73.3mm) on Multi-Layer And Text "R3" (49.73mm,74.238mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad X4-3(52.74mm,75.84mm) on Multi-Layer And Text "R3" (49.73mm,74.238mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad X4-5(47.66mm,70.76mm) on Multi-Layer And Text "X3" (46.509mm,69.801mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
+Rule Violations :5
 
 Processing Rule : Silk to Silk (Clearance=0.15mm) (All),(All)
-   Violation between Silk To Silk Clearance Constraint: (0.076mm < 0.15mm) Between Arc (61.5mm,61.1mm) on Top Overlay And Text "VT1" (61.938mm,63.977mm) on Top Overlay Silk Text to Silk Clearance [0.076mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.15mm) Between Text "C16" (87.733mm,40.946mm) on Top Overlay And Text "DD1" (90.807mm,39.702mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.15mm) Between Text "C4" (146.33mm,111.238mm) on Top Overlay And Track (146.4mm,112.7mm)(149.4mm,112.7mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.15mm) Between Text "R2" (49.735mm,60.682mm) on Top Overlay And Track (49.4mm,61.6mm)(51.1mm,61.6mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (0.022mm < 0.15mm) Between Text "R20" (136.838mm,123.631mm) on Top Overlay And Text "R25" (135.038mm,123.631mm) on Top Overlay Silk Text to Silk Clearance [0.022mm]
-   Violation between Silk To Silk Clearance Constraint: (0.022mm < 0.15mm) Between Text "R25" (135.038mm,123.631mm) on Top Overlay And Text "R26" (133.238mm,123.631mm) on Top Overlay Silk Text to Silk Clearance [0.022mm]
-   Violation between Silk To Silk Clearance Constraint: (0.122mm < 0.15mm) Between Text "R29" (147.769mm,92.538mm) on Top Overlay And Text "R30" (147.769mm,94.438mm) on Top Overlay Silk Text to Silk Clearance [0.122mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.15mm) Between Text "R3" (49.705mm,77.913mm) on Top Overlay And Track (49.2mm,79.5mm)(50.9mm,79.5mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (Collision < 0.15mm) Between Text "R32" (105.719mm,105.888mm) on Top Overlay And Text "R45" (105.494mm,107.663mm) on Top Overlay Silk Text to Silk Clearance [0mm]
-   Violation between Silk To Silk Clearance Constraint: (0.119mm < 0.15mm) Between Text "VD1" (55.856mm,89.968mm) on Top Overlay And Track (46.2mm,91.8mm)(56.4mm,91.8mm) on Top Overlay Silk Text to Silk Clearance [0.119mm]
-Rule Violations :10
+   Violation between Silk To Silk Clearance Constraint: (0.134mm < 0.15mm) Between Text "VD5" (162.844mm,97.913mm) on Top Overlay And Track (160.95mm,97.525mm)(168.45mm,97.525mm) on Top Overlay Silk Text to Silk Clearance [0.134mm]
+   Violation between Silk To Silk Clearance Constraint: (0.14mm < 0.15mm) Between Text "VD5" (162.844mm,97.913mm) on Top Overlay And Track (162.45mm,97.525mm)(162.45mm,100.025mm) on Top Overlay Silk Text to Silk Clearance [0.14mm]
+Rule Violations :2
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Via (106.825mm,81.3mm) from Top to Bottom 
+   Violation between Net Antennae: Track (169.5mm,37.5mm)(176.075mm,37.5mm) on Top 
    Violation between Net Antennae: Via (107.05mm,97.4mm) from Top to Bottom 
-   Violation between Net Antennae: Via (128.525mm,79.25mm) from Top to Bottom 
    Violation between Net Antennae: Via (152.65mm,101.05mm) from Top to Bottom 
-   Violation between Net Antennae: Via (162.2mm,93.3mm) from Top to Bottom 
-Rule Violations :5
+   Violation between Net Antennae: Via (162.1mm,93mm) from Top to Bottom 
+Rule Violations :4
 
 Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.8mm, Vertical Gap = 0mm ) (ParameterValue('ClassName')='CHIP_L'),(All) 
 Rule Violations :0
@@ -169,6 +171,6 @@ Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (Al
 Rule Violations :0
 
 
-Violations Detected : 81
+Violations Detected : 83
 Waived Violations : 0
-Time Elapsed        : 00:00:07
+Time Elapsed        : 00:00:08

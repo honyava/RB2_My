@@ -1,0 +1,785 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 {
+			font-family : segoe ui;
+			color : black;
+			background-color : #EDE7D9;
+			padding: 0.3em;
+		}
+
+		h1 {
+			font-size: 1.2em;
+		}		
+
+		h2 {
+			font-size: 1.2em;
+		}
+
+		body {
+			font-family : segoe ui;
+		}
+
+		td, th {
+			padding: 0.5em;
+			text-align : left;
+			width: 10em;
+		}
+		th {
+			background-color : #EEEEEE;
+
+		}
+		th.column1, td.column1 {
+			text-align: left;
+			width : auto;
+		}
+		table {
+			width : 100%;
+			font-size: 0.9em;
+		}
+
+		.DRC_summary_header {
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width: 100%;
+			align: left;
+		}
+
+		.DRC_summary_header_col1,
+		.DRC_summary_header_col2, 
+		.DRC_summary_header_col3 {
+			color : black;
+			font-size:100%;
+			padding : 0em;
+			padding-top : 0.2em;
+			padding-bottom 0.2em;
+			border : 0px solid black;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.DRC_summary_header_col1 {
+			font-weight: bold;
+			width: 8em;
+		}
+
+		.DRC_summary_header_col2 {
+			width: 0.1em;
+		
+		}
+
+		.DRC_summary_header_col3 {
+			width : auto;
+		}
+
+		.header_holder {
+		    Width = 100%;
+		    border = 0px solid green;
+		    padding = 0;
+		}
+
+
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3
+		{
+			left : 0;
+			top : 0;
+			padding: 0em;
+			padding-top : 0.1em;
+			border : 0px solid black;
+			width : 100%;
+			vertical-align: top;
+			text-align: left;
+		}
+
+		.front_matter_column1 {
+			width : 8em;
+			font-weight: bold;
+		}
+
+		.front_matter_column2 {
+			width: 0.1em;
+		}
+
+		.front_matter_column3 {
+			width : auto;
+		}
+
+		.total_column1, .total_column {
+			font-weight : bold;
+		}
+		.total_column1 {
+			text-align : left;
+		}
+		.warning, .error {
+			color : red;
+			font-weight : bold;
+		}
+		tr.onmouseout_odd {
+			background-color : #white;
+		}
+		tr.onmouseout_even { 
+			background-color : #FAFAFA;
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : #EEEEEE;
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #21489e;
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}
+	</script><title>Design Rule Verification Report</title>
+</head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\Users\Public\Documents\Altium\AD21\Templates\AD_logo.png
+		"><h1>Design Rule Verification Report</h1>
+<table class="header_holder">
+<td class="column1">
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">11.07.2023</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">10:47:17</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3">00:00:08</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename:</td>
+<td class="front_matter_column2"></td>
+<td class="front_matter_column3"><a href="file:///D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc" class="file"><acronym title="D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc">D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc</acronym></a></td>
+</tr>
+</table>
+</td>
+<td class="column2">
+<table class="DRC_summary_header">
+<tr>
+<td class="DRC_summary_header_col1">Warnings:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3">0</td></tr>
+<tr>
+<td class="DRC_summary_header_col1">Rule Violations:</td>
+<td class="DRC_summary_header_col2"></td>
+<td class="DRC_summary_header_col3" style="color : red">123</td></tr>
+</table>
+</td>
+</table><a name="IDQBLNPWO5IN4IO2S32ZQFVPHT1DLCQH2U44VLSHMFA2DXRNJKOQBE"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">0</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVMATZWF30BQAOY0EQ0DNI5EGGITKRX4LHNVVBSLITDLVW5DJJCFH">Clearance Constraint (Gap=0.25mm) (OnMid),(isvia    or IsPad)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDMWTEFZGNZGA3EDEDCR2CLU3CZI5YFD33S0RNDQCT2IC3QR3YJ3PN">Clearance Constraint (Gap=0.125mm) (All),(All)</a></td>
+<td class="column2">7</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDNYBE25FCWNSUGXQTRBFDIZLHJLUZZH3XROOFEJ5R0RIYKMBZPC">Clearance Constraint (Gap=0mm) (IsKeepOut),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDVH0E0ZXRKGUOB1NWIA0I4J0JLHRWYVL0WOYMGYID4XCPRISK4JTG">Clearance Constraint (Gap=0mm) ((IsPad and not    InPadClass('ThermoPads')) or IsVia),((IsPad and not    InPadClass('ThermoPads')) or IsVia)</a></td>
+<td class="column2">4</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID31FAQOAN2C3AMVOF2341DTQRHIKD5RZQSXVYXRC5MFI5GJD45PTM">Clearance Constraint (Gap=0mm) (HasFootprint('CAPC3419X15N(1206)')),(All)</a></td>
+<td class="column2">1</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXAGMJJ1NRGOEBMAWPWKOGFWZ0DYPPPYE2SAVVAHS3D22T2WZS11N">Clearance Constraint (Gap=1.6mm) (All),(HasFootprint('—Ќѕ347-20¬ѕ22-¬') and HasFootprint('—Ќѕ268-25–ѕ32-1-4-¬') and HasFootprint('—Ќѕ268-9¬ѕ32-1-4-¬') and HasFootprint('√–ѕћ9-62Ў”2-¬') and HasFootprint('HYR-1149') and HasFootprint('DS1040-02RN'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID32D2SC4PWEGRCTV4CB4SP5HL0J0DH1GZKXIVKDEFUCCEBX0DOIK">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">11</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRDA31QBXXQIPIOENKKQL5YMVXNVAYHUWG3XPVVBPG5VA5Q3THZCP">Un-Routed Net Constraint ( (All) )</a></td>
+<td class="column2">69</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDR3JIAD3HGN40DW3IX42XU2LYWOG3QPBNJO2QZTLGSJ0OJWFC0YII">Modified Polygon (Allow modified: No), (Allow shelved: No)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAEQEHNVU0ZZOOTYRXEFF5ZFLJKIIDHRKUW3MZ4NBZX122YS2K11G">Width Constraint (Min=0.125mm) (Max=10mm) (Preferred=0.2mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID5G4323YVHOZPIZ51MUY0FCAZLP3AVAT4JEOLYLO5DYHRYKQW0Q5J">Routing Layers(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDOA323T02HHZECKYXYPZDOWUFTE3YU3NTFD5LA3HB5XFAIWC04BMD">Routing Via (MinHoleWidth=0.3mm) (MaxHoleWidth=0.6mm) (PreferredHoleWidth=0.3mm) (MinWidth=0.7mm) (MaxWidth=1.1mm) (PreferedWidth=0.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDL43UELTXA004IS4GM3V30EPZBJFJTJLBI3OST1FH24RP3DLA0Z0I">Differential Pairs Uncoupled Length using the Gap Constraints (Min=0.125mm) (Max=0.5mm) (Prefered=0.3mm)  and Width Constraints (Min=0.125mm) (Max=0.5mm) (Prefered=0.2mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDN55GJRR1VH5VJX0FZFSH1VSPNGBGM13OZ353OWWZQXYKXHWPQSC">Power Plane Connect Rule(Relief Connect )(Expansion=0.2mm) (Conductor Width=0.3mm) (Air Gap=0.2mm) (Entries=4) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDUHETCTLZWJHPBRPT2ODHXIQQJOI02FTESUHQIILMXRXEBPDX3RE">Hole Size Constraint (Min=0.2mm) (Max=5.9mm) (IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAN1W2L4RLILHLPWNDKI1H4VRXB3VJSIDITL24QERXFEULA50F3BD">Hole Size Constraint (Min=0.3mm) (Max=5.9mm) (IsVia)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCTTSNT4W5DLVC4IVSFODBU23CNY02WDHVG5XEYIMG5EDKFFJQDOP">Hole Size Constraint (Min=0.6mm) (Max=5.9mm) (IsPad)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDZQGVFDXIHOJYHGUGS4B24NV33BPBII4MN2S5IRN3T40X4BXECNPF">Pads and Vias to follow the Drill pairs settings</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDRPN4BUWPRSPNLSOKYI3ZNFUOVPGEHCCXHUI02QOWQPT2DL3ORUTE">Hole To Hole Clearance (Gap=0.25mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDQ1UXHOAG235KFCNOVNEVV3BYNGNKA4UUCRCCXFDD3N0GA4QZKNLH">Minimum Solder Mask Sliver (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID1BAHKV0SOR02PSBVSXE042Y43LJRFTJW2NAA0DD10140SH2VERNL">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</a></td>
+<td class="column2">18</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID1NT4P2TE0NU0MIGHWYQNLBGGQOU5ANJHSBCOVCJMVWTKHFY4DD3K">Silk to Silk (Clearance=0.15mm) (All),(All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDVGBB3Z4LYB01N0V02FQF1COINU1EIF40EUAILHN0IVTU5GLW2DL">Net Antennae (Tolerance=0mm) (All)</a></td>
+<td class="column2">10</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#ID20ZUNMFWO2RUBF4CT05GIUIKKIPKWSATB0XSMTMYVW5R5ISKKDBF">Component Clearance Constraint ( Horizontal Gap = 0.8mm, Vertical Gap = 0mm ) (ParameterValue('ClassName')='CHIP_L'),(All) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#ID0N3PZUO1XRRLK5GOQNJ34SVTQFVPCLDCAKHCB1NN1A2Q2Y40AHID">Component Clearance Constraint ( Horizontal Gap = 0.59mm, Vertical Gap = 0mm ) (ParameterValue('ClassName')='CHIP'),(ParameterValue('ClassName')&lt;&gt;'TH') </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDRQEMBBVV1I01IEYEOWVZQLSCEE2MELSJ2W12ERLZB3K13DP3JPZC">Component Clearance Constraint ( Horizontal Gap = -1.6mm, Vertical Gap = 0mm ) (ParameterValue('Name')='–азъемы'),(All) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDCNIGNLYVBRIANFA4SVFCS5NCPKXDOC35FGB11JBTNAF2VYNAM1PJ">Component Clearance Constraint ( Horizontal Gap = 0.99mm, Vertical Gap = 0mm ) (ParameterValue('ClassName')='SMT'),(All) </a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDXHLBDBLXJRGIO0FXVUWADMFJHHGOYJ5MWLARG2EM2NLFPXISMKDM">Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">123</td>
+</tr>
+</table><br><a name="IDMWTEFZGNZGA3EDEDCR2CLU3CZI5YFD33S0RNDQCT2IC3QR3YJ3PN"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0.125mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad X5-10(88.24mm,24.94mm) on Multi-Layer And Track (87.9mm,25.5mm)(94.9mm,25.5mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad X5-3(85.7mm,32.56mm) on Multi-Layer And Track (82.9mm,31.7mm)(86.3mm,31.7mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Track (87.9mm,31.7mm)(88.2mm,31.7mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.867mil|Location2.X=4481.038mil|Location1.Y=2250.507mil|Location2.Y=2256.678mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.867mil|Location2.X=4481.038mil|Location1.Y=2250.507mil|Location2.Y=2256.678mil|Absolute=True">Clearance Constraint: (0.037mm &lt; 0.125mm) Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Track (88.24mm,31.66mm)(93.15mm,31.66mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Track (88.2mm,31.7mm)(88.24mm,31.66mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad X5-9(85.7mm,24.94mm) on Multi-Layer And Track (81.4mm,29.45mm)(85.35mm,25.5mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad X5-9(85.7mm,24.94mm) on Multi-Layer And Track (85.35mm,25.5mm)(86.3mm,25.5mm) on Top </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVH0E0ZXRKGUOB1NWIA0I4J0JLHRWYVL0WOYMGYID4XCPRISK4JTG"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0mm) ((IsPad and not    InPadClass('ThermoPads')) or IsVia),((IsPad and not    InPadClass('ThermoPads')) or IsVia)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad R47-1(87.9mm,31.7mm) on Top And Pad X5-4(88.24mm,32.56mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=2283.686mil|Location2.Y=2287.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad R47-2(86.3mm,31.7mm) on Top And Pad X5-3(85.7mm,32.56mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4475.812mil|Location2.X=4480.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad R48-1(87.9mm,25.5mm) on Top And Pad X5-10(88.24mm,24.94mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4375.812mil|Location2.X=4380.093mil|Location1.Y=1983.686mil|Location2.Y=1987.967mil|Absolute=True">Clearance Constraint: (Collision &lt; 0.125mm) Between Pad R48-2(86.3mm,25.5mm) on Top And Pad X5-9(85.7mm,24.94mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID31FAQOAN2C3AMVOF2341DTQRHIKD5RZQSXVYXRC5MFI5GJD45PTM"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Clearance Constraint (Gap=0mm) (HasFootprint('CAPC3419X15N(1206)')),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5397.997mil|Location2.X=5443.525mil|Location1.Y=5285.3mil|Location2.Y=5318.046mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5397.997mil|Location2.X=5443.525mil|Location1.Y=5285.3mil|Location2.Y=5318.046mil|Absolute=True">Clearance Constraint: (0.675mm &lt; 0.8mm) Between Pad C13-1(111mm,110mm) on Top And Pad R45-1(112.125mm,108.325mm) on Top </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID32D2SC4PWEGRCTV4CB4SP5HL0J0DH1GZKXIVKDEFUCCEBX0DOIK"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4456.808mil|Location2.X=4508.079mil|Location1.Y=2383.862mil|Location2.Y=2435.133mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4456.808mil|Location2.X=4508.079mil|Location1.Y=2383.862mil|Location2.Y=2435.133mil|Absolute=True">Short-Circuit Constraint: Between Pad C16-2(88.8mm,36mm) on Top And Pad X5-2(88.24mm,35.1mm) on Multi-Layer Location : [X = 113.854mm][Y = 61.201mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4448.428mil|Location2.X=4480.706mil|Location1.Y=2246.867mil|Location2.Y=2279.144mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4448.428mil|Location2.X=4480.706mil|Location1.Y=2246.867mil|Location2.Y=2279.144mil|Absolute=True">Short-Circuit Constraint: Between Pad R47-1(87.9mm,31.7mm) on Top And Pad X5-4(88.24mm,32.56mm) on Multi-Layer Location : [X = 113.4mm][Y = 57.48mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4385.344mil|Location2.X=4410.593mil|Location1.Y=2251.516mil|Location2.Y=2276.765mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4385.344mil|Location2.X=4410.593mil|Location1.Y=2251.516mil|Location2.Y=2276.765mil|Absolute=True">Short-Circuit Constraint: Between Pad R47-2(86.3mm,31.7mm) on Top And Pad X5-3(85.7mm,32.56mm) on Multi-Layer Location : [X = 111.708mm][Y = 57.509mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.324mil|Location2.X=4484.81mil|Location1.Y=1982.499mil|Location2.Y=2022.986mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.324mil|Location2.X=4484.81mil|Location1.Y=1982.499mil|Location2.Y=2022.986mil|Absolute=True">Short-Circuit Constraint: Between Pad R48-1(87.9mm,25.5mm) on Top And Pad X5-10(88.24mm,24.94mm) on Multi-Layer Location : [X = 113.4mm][Y = 50.87mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4381.447mil|Location2.X=4417.677mil|Location1.Y=1983.492mil|Location2.Y=2019.722mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4381.447mil|Location2.X=4417.677mil|Location1.Y=1983.492mil|Location2.Y=2019.722mil|Absolute=True">Short-Circuit Constraint: Between Pad R48-2(86.3mm,25.5mm) on Top And Pad X5-9(85.7mm,24.94mm) on Multi-Layer Location : [X = 111.749mm][Y = 50.841mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4460.404mil|Location2.X=4504.34mil|Location1.Y=1985.906mil|Location2.Y=2029.842mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4460.404mil|Location2.X=4504.34mil|Location1.Y=1985.906mil|Location2.Y=2029.842mil|Absolute=True">Short-Circuit Constraint: Between Pad X5-10(88.24mm,24.94mm) on Multi-Layer And Track (87.9mm,25.5mm)(94.9mm,25.5mm) on Top Location : [X = 113.852mm][Y = 51mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4373.351mil|Location2.X=4382.554mil|Location1.Y=2249.754mil|Location2.Y=2258.956mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4373.351mil|Location2.X=4382.554mil|Location1.Y=2249.754mil|Location2.Y=2258.956mil|Absolute=True">Short-Circuit Constraint: Between Pad X5-3(85.7mm,32.56mm) on Multi-Layer And Track (82.9mm,31.7mm)(86.3mm,31.7mm) on Top Location : [X = 111.2mm][Y = 57.261mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4473.35mil|Location2.X=4478.85mil|Location1.Y=2251.629mil|Location2.Y=2257.129mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4473.35mil|Location2.X=4478.85mil|Location1.Y=2251.629mil|Location2.Y=2257.129mil|Absolute=True">Short-Circuit Constraint: Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Track (87.9mm,31.7mm)(88.2mm,31.7mm) on Top Location : [X = 113.693mm][Y = 57.261mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.439mil|Location2.X=4478.852mil|Location1.Y=2252.173mil|Location2.Y=2256.586mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4474.439mil|Location2.X=4478.852mil|Location1.Y=2252.173mil|Location2.Y=2256.586mil|Absolute=True">Short-Circuit Constraint: Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Track (88.2mm,31.7mm)(88.24mm,31.66mm) on Top Location : [X = 113.707mm][Y = 57.261mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4355.125mil|Location2.X=4369.716mil|Location1.Y=2001.997mil|Location2.Y=2016.588mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4355.125mil|Location2.X=4369.716mil|Location1.Y=2001.997mil|Location2.Y=2016.588mil|Absolute=True">Short-Circuit Constraint: Between Pad X5-9(85.7mm,24.94mm) on Multi-Layer And Track (81.4mm,29.45mm)(85.35mm,25.5mm) on Top Location : [X = 110.805mm][Y = 51.036mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4360.011mil|Location2.X=4404.177mil|Location1.Y=1985.791mil|Location2.Y=2029.957mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4360.011mil|Location2.X=4404.177mil|Location1.Y=1985.791mil|Location2.Y=2029.957mil|Absolute=True">Short-Circuit Constraint: Between Pad X5-9(85.7mm,24.94mm) on Multi-Layer And Track (85.35mm,25.5mm)(86.3mm,25.5mm) on Top Location : [X = 111.305mm][Y = 51mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDRDA31QBXXQIPIOENKKQL5YMVXNVAYHUWG3XPVVBPG5VA5Q3THZCP"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Un-Routed Net Constraint ( (All) )</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5265.748mil|Location2.X=5309.055mil|Location1.Y=4674.213mil|Location2.Y=4880.905mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5265.748mil|Location2.X=5309.055mil|Location1.Y=4674.213mil|Location2.Y=4880.905mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C3-2(108.8mm,94.3mm) on Top And Pad C10-2(108.8mm,97.4mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6425.197mil|Location2.X=6903.543mil|Location1.Y=4831.693mil|Location2.Y=4916.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6425.197mil|Location2.X=6903.543mil|Location1.Y=4831.693mil|Location2.Y=4916.338mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad DA2-30(140.25mm,97.55mm) on Top And Pad C11-2(149.3mm,98.3mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5331.693mil|Location2.X=5416.338mil|Location1.Y=5177.165mil|Location2.Y=5490.158mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5331.693mil|Location2.X=5416.338mil|Location1.Y=5177.165mil|Location2.Y=5490.158mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R32-1(110.55mm,106.55mm) on Top And Pad C13-2(111mm,113.4mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6856.299mil|Location2.X=6992.126mil|Location1.Y=5284.449mil|Location2.Y=5620.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6856.299mil|Location2.X=6992.126mil|Location1.Y=5284.449mil|Location2.Y=5620.079mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C4-2(149.2mm,109.8mm) on Top And Pad C14-2(150.925mm,114.9mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7334.646mil|Location2.X=8220.472mil|Location1.Y=2332.677mil|Location2.Y=2572.835mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7334.646mil|Location2.X=8220.472mil|Location1.Y=2332.677mil|Location2.Y=2572.835mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad DA1-2(161.9mm,34.85mm) on Multi-Layer And Pad C2-2(182.125mm,37.5mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6408.465mil|Location2.X=6899.606mil|Location1.Y=5284.449mil|Location2.Y=5398.622mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6408.465mil|Location2.X=6899.606mil|Location1.Y=5284.449mil|Location2.Y=5398.622mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (137.675mm,111.225mm) from Top to Bottom And Pad C4-2(149.2mm,109.8mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6856.299mil|Location2.X=7029.528mil|Location1.Y=4966.535mil|Location2.Y=5369.094mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6856.299mil|Location2.X=7029.528mil|Location1.Y=4966.535mil|Location2.Y=5369.094mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad C4-2(149.2mm,109.8mm) on Top And Via (152.65mm,101.05mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6173.228mil|Location2.X=6286.417mil|Location1.Y=4163.386mil|Location2.Y=4604.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6173.228mil|Location2.X=6286.417mil|Location1.Y=4163.386mil|Location2.Y=4604.331mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad DA2-19(131.6mm,88.9mm) on Top And Pad C5-2(133.1mm,80.8mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7334.646mil|Location2.X=7481.299mil|Location1.Y=2232.283mil|Location2.Y=2629.921mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7334.646mil|Location2.X=7481.299mil|Location1.Y=2232.283mil|Location2.Y=2629.921mil|Absolute=True">Un-Routed Net Constraint: Net +5¬ Between Pad DA1-1(161.9mm,32.3mm) on Multi-Layer And Via (164.125mm,40.9mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7277.953mil|Location2.X=7773.228mil|Location1.Y=2376.378mil|Location2.Y=2576.378mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7277.953mil|Location2.X=7773.228mil|Location1.Y=2376.378mil|Location2.Y=2576.378mil|Absolute=True">Un-Routed Net Constraint: Net +3,3¬ Between Pad DA1-3(161.9mm,37.4mm) on Multi-Layer And Track (169.4mm,37.4mm)(169.5mm,37.5mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4344.488mil|Location2.X=6314.961mil|Location1.Y=1752.362mil|Location2.Y=4604.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4344.488mil|Location2.X=6314.961mil|Location1.Y=1752.362mil|Location2.Y=4604.331mil|Absolute=True">Un-Routed Net Constraint: Net NetDA2_22 Between Pad X5-13(85.7mm,19.86mm) on Multi-Layer And Pad DA2-22(134.6mm,88.9mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4344.488mil|Location2.X=6393.701mil|Location1.Y=1952.362mil|Location2.Y=4604.331mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4344.488mil|Location2.X=6393.701mil|Location1.Y=1952.362mil|Location2.Y=4604.331mil|Absolute=True">Un-Routed Net Constraint: Net NetDA2_24 Between Pad X5-9(85.7mm,24.94mm) on Multi-Layer And Pad DA2-24(136.6mm,88.9mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4840.551mil|Location2.X=4984.842mil|Location1.Y=1807.874mil|Location2.Y=2320.866mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4840.551mil|Location2.X=4984.842mil|Location1.Y=1807.874mil|Location2.Y=2320.866mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (97.85mm,33.05mm) from Top to Bottom And Pad DD1-15(100.84mm,22.97mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=5024.213mil|Location1.Y=2334.646mil|Location2.Y=2535.433mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=5024.213mil|Location1.Y=2334.646mil|Location2.Y=2535.433mil|Absolute=True">Un-Routed Net Constraint: Net +3,3¬ Between Pad X5-2(88.24mm,35.1mm) on Multi-Layer And Pad DD1-26(101.84mm,36.35mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5568.898mil|Location2.X=6044.291mil|Location1.Y=5844.488mil|Location2.Y=5930.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5568.898mil|Location2.X=6044.291mil|Location1.Y=5844.488mil|Location2.Y=5930.118mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R21-2(116.5mm,123.3mm) on Top And Via (127.625mm,124.725mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7423.228mil|Location2.X=7753.937mil|Location1.Y=4643.701mil|Location2.Y=4923.228mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7423.228mil|Location2.X=7753.937mil|Location1.Y=4643.701mil|Location2.Y=4923.228mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R24-2(163.4mm,93mm) on Top And Pad VD5-1(170.7mm,98.8mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5041.339mil|Location2.X=5234.252mil|Location1.Y=4951.772mil|Location2.Y=4983.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5041.339mil|Location2.X=5234.252mil|Location1.Y=4951.772mil|Location2.Y=4983.268mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad R34-1(103.1mm,100.7mm) on Top And Via (107.05mm,100.675mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3027.165mil|Location2.X=3218.504mil|Location1.Y=3413.78mil|Location2.Y=3520.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3027.165mil|Location2.X=3218.504mil|Location1.Y=3413.78mil|Location2.Y=3520.079mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X3-2(52.74mm,62.56mm) on Multi-Layer And Pad R5-1(55.7mm,62.6mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3077.756mil|Location2.X=3277.559mil|Location1.Y=3982.283mil|Location2.Y=4048.228mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3077.756mil|Location2.X=3277.559mil|Location1.Y=3982.283mil|Location2.Y=4048.228mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (53.075mm,76.925mm) from Top to Bottom And Pad VD1-1(57mm,76.4mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.087mil|Location2.X=3277.559mil|Location1.Y=3504.921mil|Location2.Y=4041.338mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.087mil|Location2.X=3277.559mil|Location1.Y=3504.921mil|Location2.Y=4041.338mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (55.725mm,63.925mm) from Top to Bottom And Pad VD1-1(57mm,76.4mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5702.756mil|Location2.X=5938.976mil|Location1.Y=6238.189mil|Location2.Y=6297.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5702.756mil|Location2.X=5938.976mil|Location1.Y=6238.189mil|Location2.Y=6297.244mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad VD2-1(120.1mm,133.7mm) on Multi-Layer And Pad VD3-1(124.6mm,133.7mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5879.921mil|Location2.X=6044.291mil|Location1.Y=5898.622mil|Location2.Y=6297.244mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5879.921mil|Location2.X=6044.291mil|Location1.Y=5898.622mil|Location2.Y=6297.244mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad VD3-1(124.6mm,133.7mm) on Multi-Layer And Via (127.625mm,124.725mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7693.898mil|Location2.X=7753.937mil|Location1.Y=4864.173mil|Location2.Y=5054.134mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7693.898mil|Location2.X=7753.937mil|Location1.Y=4864.173mil|Location2.Y=5054.134mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad VD4-1(170.675mm,102.125mm) on Multi-Layer And Pad VD5-1(170.7mm,98.8mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7693.898mil|Location2.X=8580.709mil|Location1.Y=4995.079mil|Location2.Y=6590.551mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7693.898mil|Location2.X=8580.709mil|Location1.Y=4995.079mil|Location2.Y=6590.551mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad VD4-1(170.675mm,102.125mm) on Multi-Layer And Pad X2-1B(191.6mm,141.05mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6037.402mil|Location2.X=6100.394mil|Location1.Y=3940.945mil|Location2.Y=4137.795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6037.402mil|Location2.X=6100.394mil|Location1.Y=3940.945mil|Location2.Y=4137.795mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (128.6mm,79.2mm) from Top to Bottom And Pad VD6-2(128.65mm,75.4mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7151.575mil|Location2.X=7214.567mil|Location1.Y=4377.953mil|Location2.Y=4708.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7151.575mil|Location2.X=7214.567mil|Location1.Y=4377.953mil|Location2.Y=4708.661mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad VD8-2(156.95mm,86.5mm) on Multi-Layer And Pad VD7-2(156.95mm,93.3mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6918.307mil|Location2.X=7214.567mil|Location1.Y=4645.669mil|Location2.Y=4890.748mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6918.307mil|Location2.X=7214.567mil|Location1.Y=4645.669mil|Location2.Y=4890.748mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (150.625mm,98.325mm) from Top to Bottom And Pad VD7-2(156.95mm,93.3mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7151.575mil|Location2.X=7401.575mil|Location1.Y=4645.669mil|Location2.Y=4708.661mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7151.575mil|Location2.X=7401.575mil|Location1.Y=4645.669mil|Location2.Y=4708.661mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad VD7-2(156.95mm,93.3mm) on Multi-Layer And Via (162.1mm,93mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1352.756mil|Location2.X=3125.59mil|Location1.Y=4118.504mil|Location2.Y=6497.047mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=1352.756mil|Location2.X=3125.59mil|Location1.Y=4118.504mil|Location2.Y=6497.047mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X1-21(9.76mm,138.625mm) on Multi-Layer And Pad X4-2(52.54mm,80.46mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8240.157mil|Location2.X=8580.709mil|Location1.Y=2094.488mil|Location2.Y=2161.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8240.157mil|Location2.X=8580.709mil|Location1.Y=2094.488mil|Location2.Y=2161.417mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (184.2mm,28.525mm) from Top to Bottom And Pad X2-31B(191.6mm,28.55mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3019.291mil|Location2.X=3125.59mil|Location1.Y=4016.732mil|Location2.Y=4224.803mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3019.291mil|Location2.X=3125.59mil|Location1.Y=4016.732mil|Location2.Y=4224.803mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X4-2(52.54mm,80.46mm) on Multi-Layer And Via (53.075mm,76.925mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4344.488mil|Location2.X=4511.417mil|Location1.Y=2352.362mil|Location2.Y=2419.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4344.488mil|Location2.X=4511.417mil|Location1.Y=2352.362mil|Location2.Y=2419.291mil|Absolute=True">Un-Routed Net Constraint: Net +3,3¬ Between Pad X5-1(85.7mm,35.1mm) on Multi-Layer And Pad X5-2(88.24mm,35.1mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1852.362mil|Location2.Y=2019.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1852.362mil|Location2.Y=2019.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-12(88.24mm,22.4mm) on Multi-Layer And Pad X5-10(88.24mm,24.94mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1952.362mil|Location2.Y=2119.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1952.362mil|Location2.Y=2119.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-10(88.24mm,24.94mm) on Multi-Layer And Pad X5-8(88.24mm,27.48mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1752.362mil|Location2.Y=1919.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1752.362mil|Location2.Y=1919.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-14(88.24mm,19.86mm) on Multi-Layer And Pad X5-12(88.24mm,22.4mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4173.228mil|Location2.X=4511.417mil|Location1.Y=1814.961mil|Location2.Y=1919.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4173.228mil|Location2.X=4511.417mil|Location1.Y=1814.961mil|Location2.Y=1919.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X6-5(81.4mm,21.5mm) on Multi-Layer And Pad X5-12(88.24mm,22.4mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1652.362mil|Location2.Y=1819.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1652.362mil|Location2.Y=1819.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-16(88.24mm,17.32mm) on Multi-Layer And Pad X5-14(88.24mm,19.86mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=5921.724mil|Location1.Y=1585.827mil|Location2.Y=4411.486mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=5921.724mil|Location1.Y=1585.827mil|Location2.Y=4411.486mil|Absolute=True">Un-Routed Net Constraint: Net NetDA2_10 Between Pad X5-15(85.7mm,17.32mm) on Multi-Layer And Track (121.462mm,84.012mm)(122.372mm,84.012mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1552.362mil|Location2.Y=1719.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1552.362mil|Location2.Y=1719.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-18(88.24mm,14.78mm) on Multi-Layer And Pad X5-16(88.24mm,17.32mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1452.362mil|Location2.Y=1619.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=1452.362mil|Location2.Y=1619.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-20(88.24mm,12.24mm) on Multi-Layer And Pad X5-18(88.24mm,14.78mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=6623.622mil|Location1.Y=2185.827mil|Location2.Y=4745.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=6623.622mil|Location1.Y=2185.827mil|Location2.Y=4745.669mil|Absolute=True">Un-Routed Net Constraint: Net NetDA2_25 Between Pad X5-3(85.7mm,32.56mm) on Multi-Layer And Track (140.2mm,84.875mm)(140.2mm,92.5mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=2152.362mil|Location2.Y=2319.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=2152.362mil|Location2.Y=2319.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-6(88.24mm,30.02mm) on Multi-Layer And Pad X5-4(88.24mm,32.56mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.953mil|Location2.X=4955.905mil|Location1.Y=2185.827mil|Location2.Y=2405.512mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4377.953mil|Location2.X=4955.905mil|Location1.Y=2185.827mil|Location2.Y=2405.512mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Track (97.84mm,33.06mm)(97.85mm,33.05mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4516.732mil|Location1.Y=2252.362mil|Location2.Y=2617.126mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4516.732mil|Location1.Y=2252.362mil|Location2.Y=2617.126mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Via (88.825mm,40.575mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=6625.029mil|Location1.Y=2085.827mil|Location2.Y=4786.446mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=6625.029mil|Location1.Y=2085.827mil|Location2.Y=4786.446mil|Absolute=True">Un-Routed Net Constraint: Net NetDA2_26 Between Pad X5-5(85.7mm,30.02mm) on Multi-Layer And Track (137.636mm,93.536mm)(140.236mm,93.536mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=2052.362mil|Location2.Y=2219.291mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4444.488mil|Location2.X=4511.417mil|Location1.Y=2052.362mil|Location2.Y=2219.291mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Pad X5-8(88.24mm,27.48mm) on Multi-Layer And Pad X5-6(88.24mm,30.02mm) on Multi-Layer </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=6447.019mil|Location1.Y=1985.827mil|Location2.Y=4608.436mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4277.953mil|Location2.X=6447.019mil|Location1.Y=1985.827mil|Location2.Y=4608.436mil|Absolute=True">Un-Routed Net Constraint: Net NetDA2_23 Between Pad X5-7(85.7mm,27.48mm) on Multi-Layer And Track (135.6mm,88.9mm)(135.714mm,89.014mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5112.598mil|Location2.X=5318.504mil|Location1.Y=5002.362mil|Location2.Y=5067.52mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5112.598mil|Location2.X=5318.504mil|Location1.Y=5002.362mil|Location2.Y=5067.52mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track (106.875mm,104.125mm)(106.9mm,104.1mm) on Top And Via (107.05mm,100.675mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5109.646mil|Location2.X=5387.402mil|Location1.Y=4153.937mil|Location2.Y=4735.827mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5109.646mil|Location2.X=5387.402mil|Location1.Y=4153.937mil|Location2.Y=4735.827mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Track (106.8mm,82.575mm)(106.825mm,82.55mm) on Top And Via (108.8mm,92.25mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4958.661mil|Location2.X=5064.961mil|Location1.Y=1616.142mil|Location2.Y=1800.197mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4958.661mil|Location2.X=5064.961mil|Location1.Y=1616.142mil|Location2.Y=1800.197mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (100.85mm,19.825mm) from Top to Bottom And Via (102.75mm,15.95mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4980.315mil|Location2.X=5014.764mil|Location1.Y=5125mil|Location2.Y=5338.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4980.315mil|Location2.X=5014.764mil|Location1.Y=5125mil|Location2.Y=5338.583mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (101.4mm,109.7mm) from Top to Bottom And Via (101.475mm,105.075mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4983.268mil|Location2.X=5017.717mil|Location1.Y=4953.74mil|Location2.Y=5156.496mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4983.268mil|Location2.X=5017.717mil|Location1.Y=4953.74mil|Location2.Y=5156.496mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (101.475mm,105.075mm) from Top to Bottom And Via (101.55mm,100.725mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5033.465mil|Location2.X=8271.654mil|Location1.Y=1616.142mil|Location2.Y=2142.716mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5033.465mil|Location2.X=8271.654mil|Location1.Y=1616.142mil|Location2.Y=2142.716mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (102.75mm,15.95mm) from Top to Bottom And Via (184.2mm,28.525mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5182.087mil|Location2.X=5847.441mil|Location1.Y=2739.173mil|Location2.Y=4140.748mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5182.087mil|Location2.X=5847.441mil|Location1.Y=2739.173mil|Location2.Y=4140.748mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (106.525mm,44.475mm) from Top to Bottom And Via (122.625mm,79.275mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4840.551mil|Location2.X=5213.583mil|Location1.Y=2289.37mil|Location2.Y=2770.669mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4840.551mil|Location2.X=5213.583mil|Location1.Y=2289.37mil|Location2.Y=2770.669mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (97.85mm,33.05mm) from Top to Bottom And Via (106.525mm,44.475mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5195.866mil|Location2.X=5313.976mil|Location1.Y=5087.598mil|Location2.Y=5213.583mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5195.866mil|Location2.X=5313.976mil|Location1.Y=5087.598mil|Location2.Y=5213.583mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (106.875mm,104.125mm) from Top to Bottom And Via (109.075mm,106.525mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5192.913mil|Location2.X=5228.346mil|Location1.Y=4096.457mil|Location2.Y=4209.646mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5192.913mil|Location2.X=5228.346mil|Location1.Y=4096.457mil|Location2.Y=4209.646mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (106.8mm,81.025mm) from Top to Bottom And Via (106.9mm,78.95mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5202.756mil|Location2.X=5234.252mil|Location1.Y=4822.835mil|Location2.Y=4983.268mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5202.756mil|Location2.X=5234.252mil|Location1.Y=4822.835mil|Location2.Y=4983.268mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (107.05mm,97.4mm) from Top to Bottom And Via (107.05mm,100.675mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5436.024mil|Location2.X=5763.779mil|Location1.Y=5365.158mil|Location2.Y=5484.252mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5436.024mil|Location2.X=5763.779mil|Location1.Y=5365.158mil|Location2.Y=5484.252mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (112.975mm,113.4mm) from Top to Bottom And Via (120.5mm,111.175mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5732.283mil|Location2.X=5791.338mil|Location1.Y=4829.724mil|Location2.Y=5396.654mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5732.283mil|Location2.X=5791.338mil|Location1.Y=4829.724mil|Location2.Y=5396.654mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (120.5mm,111.175mm) from Top to Bottom And Via (121.2mm,97.575mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5759.842mil|Location2.X=6042.323mil|Location1.Y=4625.984mil|Location2.Y=4861.22mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5759.842mil|Location2.X=6042.323mil|Location1.Y=4625.984mil|Location2.Y=4861.22mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (121.2mm,97.575mm) from Top to Bottom And Via (127.575mm,92.4mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5815.945mil|Location2.X=6082.677mil|Location1.Y=4106.299mil|Location2.Y=4140.748mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5815.945mil|Location2.X=6082.677mil|Location1.Y=4106.299mil|Location2.Y=4140.748mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (122.625mm,79.275mm) from Top to Bottom And Via (128.6mm,79.2mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6010.827mil|Location2.X=6199.803mil|Location1.Y=4625mil|Location2.Y=4657.48mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6010.827mil|Location2.X=6199.803mil|Location1.Y=4625mil|Location2.Y=4657.48mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (127.575mm,92.4mm) from Top to Bottom And Via (131.575mm,92.375mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6012.795mil|Location2.X=6439.961mil|Location1.Y=5367.126mil|Location2.Y=5930.118mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6012.795mil|Location2.X=6439.961mil|Location1.Y=5367.126mil|Location2.Y=5930.118mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (127.625mm,124.725mm) from Top to Bottom And Via (137.675mm,111.225mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6051.181mil|Location2.X=6258.858mil|Location1.Y=4105.315mil|Location2.Y=4137.795mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6051.181mil|Location2.X=6258.858mil|Location1.Y=4105.315mil|Location2.Y=4137.795mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (128.6mm,79.2mm) from Top to Bottom And Via (133.075mm,79.175mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6168.307mil|Location2.X=6405.512mil|Location1.Y=4625mil|Location2.Y=4862.205mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6168.307mil|Location2.X=6405.512mil|Location1.Y=4625mil|Location2.Y=4862.205mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (131.575mm,92.375mm) from Top to Bottom And Via (136.8mm,97.6mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6918.307mil|Location2.X=7029.528mil|Location1.Y=4859.252mil|Location2.Y=4998.032mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6918.307mil|Location2.X=7029.528mil|Location1.Y=4859.252mil|Location2.Y=4998.032mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (150.625mm,98.325mm) from Top to Bottom And Via (152.65mm,101.05mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8234.252mil|Location2.X=8271.654mil|Location1.Y=2111.22mil|Location2.Y=2495.079mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=8234.252mil|Location2.X=8271.654mil|Location1.Y=2111.22mil|Location2.Y=2495.079mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (184.05mm,37.475mm) from Top to Bottom And Via (184.2mm,28.525mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.087mil|Location2.X=4516.732mil|Location1.Y=2585.63mil|Location2.Y=3536.417mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3182.087mil|Location2.X=4516.732mil|Location1.Y=2585.63mil|Location2.Y=3536.417mil|Absolute=True">Un-Routed Net Constraint: Net GND Between Via (55.725mm,63.925mm) from Top to Bottom And Via (88.825mm,40.575mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID1BAHKV0SOR02PSBVSXE042Y43LJRFTJW2NAA0DD10140SH2VERNL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4454.1mil|Location2.X=4461.255mil|Location1.Y=2576.009mil|Location2.Y=2583.164mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4454.1mil|Location2.X=4461.255mil|Location1.Y=2576.009mil|Location2.Y=2583.164mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (0.143mm &lt; 0.15mm) Between Pad C16-1(88.8mm,39.4mm) on Top And Track (82.62mm,40.22mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0.143mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2061.902mil|Location2.Y=2066.839mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2061.902mil|Location2.Y=2066.839mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad DD1-10(93.15mm,26.66mm) on Top And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2298.122mil|Location2.Y=2303.059mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2298.122mil|Location2.Y=2303.059mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad DD1-4(93.15mm,32.66mm) on Top And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2258.752mil|Location2.Y=2263.689mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2258.752mil|Location2.Y=2263.689mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad DD1-5(93.15mm,31.66mm) on Top And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2219.382mil|Location2.Y=2224.319mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2219.382mil|Location2.Y=2224.319mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad DD1-6(93.15mm,30.66mm) on Top And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2180.012mil|Location2.Y=2184.949mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2180.012mil|Location2.Y=2184.949mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad DD1-7(93.15mm,29.66mm) on Top And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2140.642mil|Location2.Y=2145.579mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2140.642mil|Location2.Y=2145.579mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad DD1-8(93.15mm,28.66mm) on Top And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2101.272mil|Location2.Y=2106.209mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2101.272mil|Location2.Y=2106.209mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad DD1-9(93.15mm,27.66mm) on Top And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4388.532mil|Location2.X=4393.468mil|Location1.Y=2349.894mil|Location2.Y=2354.831mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4388.532mil|Location2.X=4393.468mil|Location1.Y=2349.894mil|Location2.Y=2354.831mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X5-1(85.7mm,35.1mm) on Multi-Layer And Text "R47" (86.031mm,33.199mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478.502mil|Location2.X=4483.439mil|Location1.Y=2368.512mil|Location2.Y=2373.449mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478.502mil|Location2.X=4483.439mil|Location1.Y=2368.512mil|Location2.Y=2373.449mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X5-2(88.24mm,35.1mm) on Multi-Layer And Text "R47" (86.031mm,33.199mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4388.532mil|Location2.X=4393.468mil|Location1.Y=2308.532mil|Location2.Y=2313.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4388.532mil|Location2.X=4393.468mil|Location1.Y=2308.532mil|Location2.Y=2313.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X5-3(85.7mm,32.56mm) on Multi-Layer And Text "R47" (86.031mm,33.199mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478.502mil|Location2.X=4483.439mil|Location1.Y=2308.532mil|Location2.Y=2313.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478.502mil|Location2.X=4483.439mil|Location1.Y=2308.532mil|Location2.Y=2313.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X5-4(88.24mm,32.56mm) on Multi-Layer And Text "R47" (86.031mm,33.199mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4388.532mil|Location2.X=4393.468mil|Location1.Y=2083.358mil|Location2.Y=2088.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4388.532mil|Location2.X=4393.468mil|Location1.Y=2083.358mil|Location2.Y=2088.295mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X5-7(85.7mm,27.48mm) on Multi-Layer And Text "R48" (86.031mm,26.976mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478.502mil|Location2.X=4483.439mil|Location1.Y=2083.358mil|Location2.Y=2088.295mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4478.502mil|Location2.X=4483.439mil|Location1.Y=2083.358mil|Location2.Y=2088.295mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X5-8(88.24mm,27.48mm) on Multi-Layer And Text "R48" (86.031mm,26.976mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4259.532mil|Location2.X=4264.468mil|Location1.Y=2619.532mil|Location2.Y=2624.468mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4259.532mil|Location2.X=4264.468mil|Location1.Y=2619.532mil|Location2.Y=2624.468mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X6-10(79.98mm,39.2mm) on Multi-Layer And Text "X5" (82.755mm,41.099mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4254.224mil|Location2.X=4259.161mil|Location1.Y=2584.933mil|Location2.Y=2589.87mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4254.224mil|Location2.X=4259.161mil|Location1.Y=2584.933mil|Location2.Y=2589.87mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X6-10(79.98mm,39.2mm) on Multi-Layer And Track (82.62mm,40.22mm)(91.32mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4254.224mil|Location2.X=4259.161mil|Location1.Y=2544.776mil|Location2.Y=2549.713mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4254.224mil|Location2.X=4259.161mil|Location1.Y=2544.776mil|Location2.Y=2549.713mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X6-10(79.98mm,39.2mm) on Multi-Layer And Track (82.62mm,7.12mm)(82.62mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4254.224mil|Location2.X=4259.161mil|Location1.Y=1560.524mil|Location2.Y=1565.461mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4254.224mil|Location2.X=4259.161mil|Location1.Y=1560.524mil|Location2.Y=1565.461mil|Absolute=True">Silk To Solder Mask Clearance Constraint: (Collision &lt; 0.15mm) Between Pad X6-11(79.98mm,14.2mm) on Multi-Layer And Track (82.62mm,7.12mm)(82.62mm,40.22mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="ID1NT4P2TE0NU0MIGHWYQNLBGGQOU5ANJHSBCOVCJMVWTKHFY4DD3K"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Silk to Silk (Clearance=0.15mm) (All),(All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2503.9mil|Location2.Y=2508.837mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=4596.744mil|Location2.X=4601.681mil|Location1.Y=2503.9mil|Location2.Y=2508.837mil|Absolute=True">Silk To Silk Clearance Constraint: (Collision &lt; 0.15mm) Between Text "DD1" (91.423mm,36.638mm) on Top Overlay And Track (91.32mm,7.12mm)(91.32mm,40.22mm) on Top Overlay Silk Text to Silk Clearance [0mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7431.52mil|Location2.X=7438.676mil|Location1.Y=4847.569mil|Location2.Y=4854.724mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7431.52mil|Location2.X=7438.676mil|Location1.Y=4847.569mil|Location2.Y=4854.724mil|Absolute=True">Silk To Silk Clearance Constraint: (0.134mm &lt; 0.15mm) Between Text "VD5" (162.844mm,97.913mm) on Top Overlay And Track (160.95mm,97.525mm)(168.45mm,97.525mm) on Top Overlay Silk Text to Silk Clearance [0.134mm]</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7403.778mil|Location2.X=7410.933mil|Location1.Y=4915.192mil|Location2.Y=4922.347mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7403.778mil|Location2.X=7410.933mil|Location1.Y=4915.192mil|Location2.Y=4922.347mil|Absolute=True">Silk To Silk Clearance Constraint: (0.14mm &lt; 0.15mm) Between Text "VD5" (162.844mm,97.913mm) on Top Overlay And Track (162.45mm,97.525mm)(162.45mm,100.025mm) on Top Overlay Silk Text to Silk Clearance [0.14mm]</acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br><a name="IDVGBB3Z4LYB01N0V02FQF1COINU1EIF40EUAILHN0IVTU5GLW2DL"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Net Antennae (Tolerance=0mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7663.823mil|Location2.X=7697.953mil|Location1.Y=2466.972mil|Location2.Y=2518.557mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7663.823mil|Location2.X=7697.953mil|Location1.Y=2466.972mil|Location2.Y=2518.557mil|Absolute=True">Net Antennae: Track (169.5mm,37.5mm)(176.075mm,37.5mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3308.41mil|Location2.X=3326.47mil|Location1.Y=6587.543mil|Location2.Y=6612.626mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3308.41mil|Location2.X=3326.47mil|Location1.Y=6587.543mil|Location2.Y=6612.626mil|Absolute=True">Net Antennae: Track (53.95mm,141.975mm)(58.685mm,141.975mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6786.953mil|Location2.Y=6812.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6786.953mil|Location2.Y=6812.035mil|Absolute=True">Net Antennae: Track (57.51mm,145.85mm)(58.7mm,147.04mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6886.953mil|Location2.Y=6912.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6886.953mil|Location2.Y=6912.035mil|Absolute=True">Net Antennae: Track (57.87mm,148.75mm)(58.7mm,149.58mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6986.953mil|Location2.Y=7012.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6986.953mil|Location2.Y=7012.035mil|Absolute=True">Net Antennae: Track (58.359mm,152.12mm)(58.7mm,152.12mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6486.953mil|Location2.Y=6512.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=6486.953mil|Location2.Y=6512.035mil|Absolute=True">Net Antennae: Track (58.418mm,139.138mm)(58.7mm,139.42mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=7086.953mil|Location2.Y=7112.035mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=3309mil|Location2.X=3327.06mil|Location1.Y=7086.953mil|Location2.Y=7112.035mil|Absolute=True">Net Antennae: Track (58.59mm,154.55mm)(58.7mm,154.66mm) on Top </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5199.256mil|Location2.X=5246.242mil|Location1.Y=4819.335mil|Location2.Y=4892.564mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=5199.256mil|Location2.X=5246.242mil|Location1.Y=4819.335mil|Location2.Y=4892.564mil|Absolute=True">Net Antennae: Via (107.05mm,97.4mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6994.532mil|Location2.X=7041.518mil|Location1.Y=4963.035mil|Location2.Y=5036.265mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=6994.532mil|Location2.X=7041.518mil|Location1.Y=4963.035mil|Location2.Y=5036.265mil|Absolute=True">Net Antennae: Via (152.65mm,101.05mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My %E2%80%94 %D0%BA%D0%BE%D0%BF%D0%B8%D1%8F.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7366.579mil|Location2.X=7413.565mil|Location1.Y=4646.106mil|Location2.Y=4719.336mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My Ч копи€.PcbDoc;viewname=PCBEditor;Action=AREA_DYNAMICZOOM|Location1.X=7366.579mil|Location2.X=7413.565mil|Location1.Y=4646.106mil|Location2.Y=4719.336mil|Absolute=True">Net Antennae: Via (162.1mm,93mm) from Top to Bottom </acronym></a><br></td>
+</tr>
+</table></a><hr color="#EEEEEE"><a href="#top" style="font-size: 0.9em">Back to top</a><br><br></body>
+</html>
