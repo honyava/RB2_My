@@ -1,0 +1,7 @@
+Removed Pin From Net: NetName=+5ֲ Pin=X1-20
+Removed Pin From Net: NetName=GND Pin=X1-21
+Removed Pin From Net: NetName=+3,3ֲ Pin=X1-22
+Change Component Designator: OldDesignator=C1 NewDesignator=ׁ1
+Added Pin To Net: NetName=GND Pin=X1-20
+Added Pin To Net: NetName=+3,3ֲ Pin=X1-21
+Added Member To Class: ClassName=RB2_My Member=Component ׁ1 Ê10-17ג-ֽ90-0,1לךװ-3־ֶ־.460.107ׂ׃

@@ -1,0 +1,12 @@
+Change Component Comment : Designator=DA1 Old Comment=1303ем3.3оюеъп.431420.638рс New Comment=1303ем3.3о
+Change Component Comment : Designator=DA2 Old Comment=1986бе92сюеъп.431290.711рс New Comment=1986бе92с
+Change Component Comment : Designator=DD1 Old Comment=5559хм4сюеъп.431230.460рс New Comment=5559хм4с
+Change Component Comment : Designator=X3 Old Comment=HYR-1149вХО&дХО New Comment=HYR-1149
+Change Component Comment : Designator=X4 Old Comment=HYR-1149вХО&дХО New Comment=HYR-1149
+Change Component Comment : Designator=X6 Old Comment=ямо268-9бо32-1-3-баяюп.430420.014рс New Comment=ямо268-9бо32-1-3-б
+Change Component Comment : Designator=X1 Old Comment=ямо268-25по32-1-3-баяюп.430420.014рс New Comment=ямо268-25по32-1-3-б
+Change Component Comment : Designator=X5 Old Comment=ямо347-20бо32-бпчлй.430420.012рс New Comment=ямо347-20бо32-б
+Change component parameters: Designator = "X2" ("X2"); Footprint = "цпол9-62ьс2-б"; UniqueID = "\NVKTEXCO" ("\NVKTEXCO")
+Change component parameters (AddParameter): Name = "manufacture"; Value = "йЕ0.364.009рс"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "Name"; Value = "пЮГЗЕЛШ"; VariantName = "[No Variations]"
+Change component parameters (AddParameter): Name = "name_main"; Value = "цпол9-62ьс2-б"; VariantName = "[No Variations]"
