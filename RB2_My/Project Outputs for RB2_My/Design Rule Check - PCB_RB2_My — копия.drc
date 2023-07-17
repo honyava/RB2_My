@@ -1,21 +1,15 @@
 Protel Design System Design Rule Check
 PCB File : D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My — êîïèÿ.PcbDoc
-Date     : 13.07.2023
-Time     : 14:03:08
+Date     : 17.07.2023
+Time     : 9:11:47
 
-Processing Rule : Clearance Constraint (Gap=0.25mm) (OnMid),(isvia    or IsPad)
+Processing Rule : Clearance Constraint (Gap=0mm) (HasFootprint('CAPC3419X15N(1206)')),(All)
 Rule Violations :0
 
 Processing Rule : Clearance Constraint (Gap=0.125mm) (All),(All)
 Rule Violations :0
 
-Processing Rule : Clearance Constraint (Gap=0mm) (IsKeepOut),(All)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0mm) ((IsPad and not    InPadClass('ThermoPads')) or IsVia),((IsPad and not    InPadClass('ThermoPads')) or IsVia)
-Rule Violations :0
-
-Processing Rule : Clearance Constraint (Gap=0mm) (HasFootprint('CAPC3419X15N(1206)')),(All)
+Processing Rule : Clearance Constraint (Gap=0.5mm) (All),(OnLayer('Keep-Out Layer'))
 Rule Violations :0
 
 Processing Rule : Short-Circuit Constraint (Allowed=No) (All),(All)
@@ -24,47 +18,43 @@ Rule Violations :0
 Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Net GND Between Pad DA1-2(155.5mm,34.85mm) on Multi-Layer And Pad X2-31B(191.6mm,28.55mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Via (147.075mm,27.2mm) from Top to Bottom And Pad DA1-2(155.5mm,34.85mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Track (108.4mm,96.85mm)(108.8mm,97.25mm) on Top And Pad DA2-3(118mm,97.55mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad DA2-30(140.3mm,97.55mm) on Top And Track (148.225mm,97.15mm)(148.5mm,97.425mm) on Top 
    Violation between Un-Routed Net Constraint: Net Âíåø. çàï. ëîã. 1 Between Pad X1-17(9.76mm,127.625mm) on Multi-Layer And Pad DA2-34(140.3mm,101.55mm) on Top 
-   Violation between Un-Routed Net Constraint: Net Èìï. 3ÌÃö Between Pad X1-1(12.6mm,118mm) on Multi-Layer And Pad DA2-35(140.3mm,102.55mm) on Top 
    Violation between Un-Routed Net Constraint: Net Èìï. 0 Between Pad X1-2(12.6mm,120.75mm) on Multi-Layer And Pad DA2-37(140.3mm,104.55mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad DA2-56(121.65mm,111.2mm) on Top And Pad DA2-41(136.65mm,111.2mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad DA2-41(136.65mm,111.2mm) on Top And Track (148.225mm,108mm)(148.625mm,108.4mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (117.475mm,122.45mm) from Top to Bottom And Pad DA2-56(121.65mm,111.2mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad DD1-2(97.84mm,36.35mm) on Top And Pad DD1-15(100.84mm,22.97mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad DD1-15(100.84mm,22.97mm) on Top And Pad R46-1(102.85mm,16.2mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad X6-5(81.4mm,21.5mm) on Multi-Layer And Pad DD1-15(100.84mm,22.97mm) on Top 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (89.725mm,39.175mm) from Top to Bottom And Pad DD1-2(97.84mm,36.35mm) on Top 
+   Violation between Un-Routed Net Constraint: Net Èìï. ÏÇ ÀÏÄ Between Pad X1-9(12.6mm,140mm) on Multi-Layer And Pad DA2-39(140.3mm,106.55mm) on Top 
+   Violation between Un-Routed Net Constraint: Net Èìï. 3 Between Pad X1-5(12.6mm,129mm) on Multi-Layer And Pad DA2-43(134.65mm,111.2mm) on Top 
+   Violation between Un-Routed Net Constraint: Net Èìï. 4 Between Pad X1-6(12.6mm,131.75mm) on Multi-Layer And Pad DA2-44(133.65mm,111.2mm) on Top 
+   Violation between Un-Routed Net Constraint: Net Èìï. 5 Between Pad X1-7(12.6mm,134.5mm) on Multi-Layer And Pad DA2-45(132.65mm,111.2mm) on Top 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad DD1-2(97.84mm,36.35mm) on Top And Via (100.9mm,19.6mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (89.475mm,39.85mm) from Top to Bottom And Pad DD1-2(97.84mm,36.35mm) on Top 
    Violation between Un-Routed Net Constraint: Net +27Â 2ìêñ Between Pad X1-14(9.76mm,119.375mm) on Multi-Layer And Pad R13-1(118.85mm,124.5mm) on Top 
-   Violation between Un-Routed Net Constraint: Net Âíåø. çàï. 15Â Between Pad X1-16(9.76mm,124.875mm) on Multi-Layer And Pad R15-1(127.3mm,124.475mm) on Top 
-   Violation between Un-Routed Net Constraint: Net Ðåæèì Between Pad X1-18(9.76mm,130.375mm) on Multi-Layer And Pad R16-1(160.85mm,104.3mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad R3-1(51.6mm,76.4mm) on Top And Pad VD1-1(58.025mm,77.3mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad R3-1(51.6mm,76.4mm) on Top And Pad X4-2(52.54mm,80.46mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Track (101.281mm,104.181mm)(101.3mm,104.2mm) on Top And Pad R35-2(101.6mm,104.3mm) on Top 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (100.9mm,19.6mm) from Top to Bottom And Pad R46-1(102.85mm,16.2mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X3-2(52.74mm,62.56mm) on Multi-Layer And Pad R5-1(56.7mm,62.6mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad VD2-1(120.575mm,138.25mm) on Multi-Layer And Pad VD3-1(125.725mm,138.275mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad VD3-1(125.725mm,138.275mm) on Multi-Layer And Via (128.7mm,122.5mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad VD5-1(165.875mm,98.45mm) on Multi-Layer And Pad VD4-1(165.9mm,101.625mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad VD5-1(165.9mm,96.9mm) on Multi-Layer And Pad VD4-1(165.9mm,101.625mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Via (152.625mm,103.25mm) from Top to Bottom And Pad VD4-1(165.9mm,101.625mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Via (121.625mm,74.375mm) from Top to Bottom And Pad VD6-2(128.65mm,75.4mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (127.7mm,79.45mm) from Top to Bottom And Pad VD6-2(128.65mm,75.4mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Pad VD8-2(156.95mm,86.5mm) on Multi-Layer And Pad VD7-2(156.95mm,93.3mm) on Multi-Layer 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (149.8mm,95.675mm) from Top to Bottom And Pad VD7-2(156.95mm,93.3mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (127.925mm,79.4mm) from Top to Bottom And Pad VD6-2(128.65mm,75.4mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad VD7-2(157mm,91.3mm) on Multi-Layer And Pad VD8-2(157.123mm,84.146mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (149.8mm,95.675mm) from Top to Bottom And Pad VD7-2(157mm,91.3mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (147.025mm,75.1mm) from Top to Bottom And Pad VD8-2(157.123mm,84.146mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net Èìï. 3ÌÃö Between Pad X1-1(12.6mm,118mm) on Multi-Layer And Via (176.7mm,109.3mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net Èìï. 1 ÏÐÄ 1ê Between Pad X1-10(12.6mm,142.75mm) on Multi-Layer And Via (120.5mm,120.3mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. 1 ÏÐÄ 2ê Between Pad X1-11(12.6mm,145.5mm) on Multi-Layer And Via (140.4mm,118.9mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Ïðèçí. 1ìêñ Between Pad X1-12(12.6mm,148.25mm) on Multi-Layer And Via (125.6mm,114.5mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net Èìï. 1 ÏÐÄ 2ê Between Pad X1-11(12.6mm,145.5mm) on Multi-Layer And Via (128.3mm,120.2mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net Ïðèçí. 1ìêñ Between Pad X1-12(12.6mm,148.25mm) on Multi-Layer And Via (128.9mm,119.4mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net Ïðèçí. 2ìêñ Between Pad X1-13(12.6mm,151mm) on Multi-Layer And Via (130.7mm,114.5mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Ëîã.1 Between Pad X1-15(9.76mm,122.125mm) on Multi-Layer And Track (127.125mm,118.7mm)(127.325mm,118.7mm) on Top 
-   Violation between Un-Routed Net Constraint: Net +27Â âêë. 2ìêñ Between Pad X1-19(9.76mm,133.125mm) on Multi-Layer And Track (160.975mm,95.5mm)(161.175mm,95.3mm) on Top 
+   Violation between Un-Routed Net Constraint: Net Ëîã.1 Between Pad X1-15(9.76mm,122.125mm) on Multi-Layer And Via (128.4mm,117.6mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net Âíåø. çàï. 15Â Between Pad X1-16(9.76mm,124.875mm) on Multi-Layer And Via (166.4mm,119.6mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net Ðåæèì Between Pad X1-18(9.76mm,130.375mm) on Multi-Layer And Via (175.1mm,99.9mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net +27Â âêë. 2ìêñ Between Pad X1-19(9.76mm,133.125mm) on Multi-Layer And Track (160.973mm,92.827mm)(162.05mm,91.75mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X1-20(9.76mm,135.875mm) on Multi-Layer And Via (51.6mm,74.95mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. 1 Between Pad X1-3(12.6mm,123.5mm) on Multi-Layer And Via (146.913mm,109.487mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. 2 Between Pad X1-4(12.6mm,126.25mm) on Multi-Layer And Via (157.5mm,122.2mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. 3 Between Pad X1-5(12.6mm,129mm) on Multi-Layer And Via (158.3mm,123mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. 4 Between Pad X1-6(12.6mm,131.75mm) on Multi-Layer And Via (159mm,123.7mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. 5 Between Pad X1-7(12.6mm,134.5mm) on Multi-Layer And Via (159.7mm,124.4mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. 6 Between Pad X1-8(12.6mm,137.25mm) on Multi-Layer And Via (160.3mm,125.1mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net Èìï. ÏÇ ÀÏÄ Between Pad X1-9(12.6mm,140mm) on Multi-Layer And Track (140.437mm,106.413mm)(143.887mm,106.413mm) on Top 
+   Violation between Un-Routed Net Constraint: Net Èìï. 1 Between Pad X1-3(12.6mm,123.5mm) on Multi-Layer And Via (143.8mm,105.6mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net Èìï. 2 Between Pad X1-4(12.6mm,126.25mm) on Multi-Layer And Via (176.6mm,116.4mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net Èìï. 6 Between Pad X1-8(12.6mm,137.25mm) on Multi-Layer And Track (131.721mm,113.883mm)(134.338mm,116.5mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Via (149.75mm,108.4mm) from Top to Bottom And Pad X2-1B(191.6mm,141.05mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-12(142.8mm,54.76mm) on Multi-Layer And Pad X5-10(145.34mm,54.76mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-10(145.34mm,54.76mm) on Multi-Layer And Pad X5-8(147.88mm,54.76mm) on Multi-Layer 
@@ -76,32 +66,37 @@ Processing Rule : Un-Routed Net Constraint ( (All) )
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-6(150.42mm,54.76mm) on Multi-Layer And Pad X5-4(152.96mm,54.76mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Pad X5-8(147.88mm,54.76mm) on Multi-Layer And Pad X5-6(150.42mm,54.76mm) on Multi-Layer 
    Violation between Un-Routed Net Constraint: Net GND Between Via (146.825mm,46.775mm) from Top to Bottom And Pad X5-8(147.88mm,54.76mm) on Multi-Layer 
+   Violation between Un-Routed Net Constraint: Net GND Between Pad X6-5(81.4mm,21.5mm) on Multi-Layer And Track (100.84mm,19.66mm)(100.9mm,19.6mm) on Top 
+   Violation between Un-Routed Net Constraint: Net GND Between Track (108.4mm,96.85mm)(108.8mm,97.25mm) on Top And Via (114.5mm,97.5mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Track (117.475mm,122.45mm)(118.825mm,122.45mm) on Top And Track (127.3mm,122.525mm)(128.675mm,122.525mm) on Top 
    Violation between Un-Routed Net Constraint: Net GND Between Via (131.575mm,85.55mm) from Top to Bottom And Track (131.7mm,80.45mm)(132.1mm,80.85mm) on Top 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (137.8mm,111.2mm) from Top to Bottom And Track (148.225mm,108mm)(148.625mm,108.4mm) on Top 
+   Violation between Un-Routed Net Constraint: Net Èìï. 4 Between Track (172.4mm,115.5mm)(176.6mm,119.7mm) on Top And Via (176.6mm,120.075mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (100.475mm,102.7mm) from Top to Bottom And Via (100.475mm,104.2mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (100.475mm,99.175mm) from Top to Bottom And Via (100.475mm,102.7mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (100.475mm,104.2mm) from Top to Bottom And Via (100.5mm,106.2mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (100.5mm,106.2mm) from Top to Bottom And Via (107.2mm,110.55mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (89.725mm,39.175mm) from Top to Bottom And Via (104.05mm,46.425mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (105.825mm,46.45mm) from Top to Bottom And Via (116.65mm,74.375mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (89.475mm,39.85mm) from Top to Bottom And Via (104.05mm,46.425mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (105.825mm,46.45mm) from Top to Bottom And Via (116.544mm,74.375mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (107.225mm,108.825mm) from Top to Bottom And Via (107.25mm,104.875mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (107.25mm,101.575mm) from Top to Bottom And Via (107.275mm,103.225mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (107.25mm,98.575mm) from Top to Bottom And Via (107.275mm,99.85mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (107.275mm,96.85mm) from Top to Bottom And Via (107.3mm,95.125mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (107.2mm,110.55mm) from Top to Bottom And Via (117.475mm,122.45mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (116.65mm,74.375mm) from Top to Bottom And Via (121.625mm,74.375mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (116.544mm,74.375mm) from Top to Bottom And Via (121.625mm,74.375mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (117.475mm,122.45mm) from Top to Bottom And Via (120.3mm,111.2mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (127.575mm,85.575mm) from Top to Bottom And Via (131.575mm,85.55mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (129.475mm,79.45mm) from Top to Bottom And Via (131.7mm,79.45mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (128.7mm,122.5mm) from Top to Bottom And Via (137.8mm,111.2mm) from Top to Bottom 
+   Violation between Un-Routed Net Constraint: Net GND Between Via (129.7mm,79.4mm) from Top to Bottom And Via (131.7mm,79.45mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (133.475mm,79.45mm) from Top to Bottom And Via (147.025mm,75.1mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (134.9mm,61.6mm) from Top to Bottom And Via (147.05mm,70.8mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (146.85mm,42.475mm) from Top to Bottom And Via (147.075mm,27.2mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (147.025mm,75.1mm) from Top to Bottom And Via (149.8mm,95.675mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (149.75mm,106.65mm) from Top to Bottom And Via (152.625mm,103.25mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (149.8mm,97.425mm) from Top to Bottom And Via (152.625mm,100.05mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (152.625mm,100.05mm) from Top to Bottom And Via (152.625mm,103.25mm) from Top to Bottom 
    Violation between Un-Routed Net Constraint: Net GND Between Via (51.6mm,74.95mm) from Top to Bottom And Via (56.7mm,63.925mm) from Top to Bottom 
-   Violation between Un-Routed Net Constraint: Net GND Between Via (56.7mm,63.925mm) from Top to Bottom And Via (87.95mm,39.15mm) from Top to Bottom 
-Rule Violations :79
+   Violation between Un-Routed Net Constraint: Net GND Between Via (56.7mm,63.925mm) from Top to Bottom And Via (87.7mm,39.825mm) from Top to Bottom 
+Rule Violations :80
 
 Processing Rule : Modified Polygon (Allow modified: No), (Allow shelved: No)
 Rule Violations :0
@@ -118,127 +113,17 @@ Rule Violations :0
 Processing Rule : Differential Pairs Uncoupled Length using the Gap Constraints (Min=0.125mm) (Max=0.5mm) (Prefered=0.3mm)  and Width Constraints (Min=0.125mm) (Max=0.5mm) (Prefered=0.2mm) (All)
 Rule Violations :0
 
-Processing Rule : SMD Entry (Side = Allowed) (Corner = Allowed) (Any Angle = Not Allowed) (Ignore First Corner = Allowed)
-   Violation between SMD Entry Constraint: Between Pad C10-2(108.8mm,97.7mm) on Top And Track (107.25mm,98.575mm)(108.4mm,98.575mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C10-2(108.8mm,97.7mm) on Top And Track (107.275mm,96.85mm)(108.4mm,96.85mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C1-1(155.525mm,25.1mm) on Top And Track (155.5mm,25.125mm)(155.5mm,32.3mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C11-1(144.9mm,96.525mm) on Top And Track (140.3mm,96.55mm)(144.825mm,96.55mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C11-2(148.3mm,96.525mm) on Top And Track (148.5mm,97.425mm)(149.8mm,97.425mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C11-2(148.3mm,96.525mm) on Top And Track (148.625mm,95.7mm)(149.775mm,95.7mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C1-2(149.475mm,25.1mm) on Top And Track (147.075mm,23.05mm)(148.6mm,23.05mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C1-2(149.475mm,25.1mm) on Top And Track (147.075mm,27.2mm)(148.45mm,27.2mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C12-1(128.575mm,84.25mm) on Top And Track (128.65mm,84.325mm)(128.65mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C12-2(128.575mm,80.85mm) on Top And Track (127.7mm,79.45mm)(127.7mm,80.45mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C12-2(128.575mm,80.85mm) on Top And Track (129.475mm,79.45mm)(129.475mm,80.45mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C13-2(108.8mm,109.7mm) on Top And Track (107.225mm,108.825mm)(108.35mm,108.825mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C13-2(108.8mm,109.7mm) on Top And Track (107.2mm,110.55mm)(108.35mm,110.55mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C14-1(155.325mm,72.9mm) on Top And Track (155.5mm,61.9mm)(155.5mm,73.55mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C14-2(149.275mm,72.9mm) on Top And Track (147.05mm,70.8mm)(148.65mm,70.8mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C14-2(149.275mm,72.9mm) on Top And Track (147.05mm,75.075mm)(148.65mm,75.075mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C14-2(149.275mm,72.9mm) on Top And Track (147.075mm,72.925mm)(149.675mm,72.925mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C15-1(134.025mm,66.4mm) on Top And Track (134.075mm,66.375mm)(135.525mm,66.375mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C15-2(134.025mm,63mm) on Top And Track (133.125mm,61.6mm)(133.125mm,62.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C15-2(134.025mm,63mm) on Top And Track (134.9mm,61.6mm)(134.9mm,62.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C17-1(88.85mm,37.725mm) on Top And Track (87.95mm,38.062mm)(87.95mm,39.15mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C17-1(88.85mm,37.725mm) on Top And Track (89.725mm,38.062mm)(89.725mm,39.175mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C17-2(88.85mm,34.325mm) on Top And Track (89.625mm,33.975mm)(90.9mm,32.7mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C19-1(104.9mm,44.9mm) on Top And Track (104.05mm,45.337mm)(104.05mm,46.425mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C19-1(104.9mm,44.9mm) on Top And Track (105.825mm,45.337mm)(105.825mm,46.45mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C19-2(104.9mm,41.5mm) on Top And Track (105.4mm,34.475mm)(105.4mm,41.25mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C20-1(101.6mm,44.9mm) on Top And Track (100.2mm,44.016mm)(100.675mm,44.491mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C2-1(155.525mm,44.6mm) on Top And Track (155.5mm,37.4mm)(155.5mm,44.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C2-1(155.525mm,44.6mm) on Top And Track (155.5mm,45.2mm)(155.5mm,49.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C2-1(155.525mm,44.6mm) on Top And Track (156.15mm,45.825mm)(181.45mm,45.825mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C2-2(149.475mm,44.6mm) on Top And Track (146.85mm,42.475mm)(148.45mm,42.475mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C2-2(149.475mm,44.6mm) on Top And Track (146.85mm,46.75mm)(148.45mm,46.75mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C3-2(108.8mm,94.3mm) on Top And Track (107.3mm,93.6mm)(108.4mm,93.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C3-2(108.8mm,94.3mm) on Top And Track (107.3mm,95.125mm)(108.4mm,95.125mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C4-1(144.825mm,107.525mm) on Top And Track (140.3mm,107.55mm)(144.8mm,107.55mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C4-1(144.825mm,107.525mm) on Top And Track (145.075mm,107.775mm)(145.075mm,108.675mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C4-2(148.225mm,107.525mm) on Top And Track (148.625mm,106.65mm)(149.75mm,106.65mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C4-2(148.225mm,107.525mm) on Top And Track (148.625mm,108.4mm)(149.75mm,108.4mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C5-1(132.6mm,84.25mm) on Top And Track (132.65mm,84.3mm)(132.65mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C5-2(132.6mm,80.85mm) on Top And Track (131.7mm,79.45mm)(131.7mm,80.45mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C5-2(132.6mm,80.85mm) on Top And Track (133.475mm,79.45mm)(133.475mm,80.45mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C6-1(108.8mm,104.075mm) on Top And Track (107.275mm,103.225mm)(108.4mm,103.225mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C6-1(108.8mm,104.075mm) on Top And Track (107.325mm,104.95mm)(108.4mm,104.95mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C6-2(112.2mm,104.075mm) on Top And Track (111.2mm,102.6mm)(112.2mm,103.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C7-1(108.8mm,100.7mm) on Top And Track (107.25mm,101.575mm)(108.4mm,101.575mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C7-1(108.8mm,100.7mm) on Top And Track (107.275mm,99.85mm)(108.4mm,99.85mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C7-2(112.2mm,100.7mm) on Top And Track (111.25mm,99.2mm)(111.8mm,99.75mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad C7-2(112.2mm,100.7mm) on Top And Track (112.35mm,100.55mm)(117.95mm,100.55mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-14(126.65mm,88.9mm) on Top And Track (126.6mm,88.9mm)(126.6mm,91.525mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-15(127.65mm,88.9mm) on Top And Track (127.6mm,85.6mm)(127.6mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-19(131.65mm,88.9mm) on Top And Track (131.6mm,85.575mm)(131.6mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-21(133.65mm,88.9mm) on Top And Track (133.6mm,85.9mm)(133.6mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-22(134.65mm,88.9mm) on Top And Track (134.6mm,85.5mm)(134.6mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-23(135.65mm,88.9mm) on Top And Track (135.6mm,85.475mm)(135.6mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-24(136.65mm,88.9mm) on Top And Track (136.6mm,85.45mm)(136.6mm,88.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-29(140.3mm,96.55mm) on Top And Track (136.934mm,95.634mm)(137.85mm,96.55mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-31(140.3mm,98.55mm) on Top And Track (140.3mm,98.5mm)(150.825mm,98.5mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-33(140.3mm,100.55mm) on Top And Track (140.283mm,100.517mm)(142.933mm,100.517mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-39(140.3mm,106.55mm) on Top And Track (140.437mm,106.413mm)(143.887mm,106.413mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-4(118mm,96.55mm) on Top And Track (112.85mm,96.525mm)(117.925mm,96.525mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-46(131.65mm,111.2mm) on Top And Track (131.7mm,111.25mm)(131.7mm,113.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-48(129.65mm,111.2mm) on Top And Track (129.6mm,111.2mm)(129.6mm,116.075mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-51(126.65mm,111.2mm) on Top And Track (126.64mm,111.21mm)(126.64mm,114.721mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-57(118mm,107.55mm) on Top And Track (114.375mm,108.675mm)(115.5mm,107.55mm) on Top Not Allowed Angle on side for track
-   Violation between SMD Entry Constraint: Between Pad DA2-62(118mm,102.55mm) on Top And Track (115.325mm,102.7mm)(116.125mm,102.7mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DA2-63(118mm,101.55mm) on Top And Track (114.2mm,101.6mm)(117.9mm,101.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DD1-1(98.84mm,36.35mm) on Top And Track (98.825mm,36.35mm)(98.825mm,38.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DD1-16(101.84mm,22.97mm) on Top And Track (101.8mm,19.725mm)(101.8mm,22.93mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DD1-25(102.84mm,36.35mm) on Top And Track (102.715mm,36.475mm)(102.715mm,38.975mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DD1-28(99.84mm,36.35mm) on Top And Track (99.715mm,36.475mm)(99.715mm,38.975mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DD1-3(96.84mm,36.35mm) on Top And Track (96.715mm,36.475mm)(96.715mm,38.975mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DD1-4(93.15mm,32.66mm) on Top And Track (89.625mm,33.975mm)(90.9mm,32.7mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad DD1-5(93.15mm,31.66mm) on Top And Track (90.635mm,31.675mm)(90.65mm,31.66mm) on Top Not Allowed Angle on side for track
-   Violation between SMD Entry Constraint: Between Pad R10-1(178.4mm,137.65mm) on Top And Track (178.55mm,137.5mm)(179.9mm,137.5mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R10-2(176.8mm,137.65mm) on Top And Track (176.45mm,138mm)(176.55mm,137.9mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R11-2(119.4mm,117.7mm) on Top And Track (119.6mm,117.5mm)(119.9mm,117.5mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R12-1(121.2mm,119.3mm) on Top And Track (121.7mm,119mm)(122.7mm,119mm) on Top Not Allowed Angle in corner for track
-   Violation between SMD Entry Constraint: Between Pad R13-2(120.45mm,124.5mm) on Top And Track (120.525mm,122.45mm)(120.525mm,124.25mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R13-2(120.45mm,124.5mm) on Top And Track (120.575mm,124.925mm)(120.575mm,126.25mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R14-1(127.125mm,118.7mm) on Top And Track (127.525mm,118.475mm)(128.4mm,117.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R14-2(127.125mm,117.1mm) on Top And Track (127.525mm,116.875mm)(128.65mm,115.75mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R15-2(125.7mm,124.475mm) on Top And Track (125.65mm,122.85mm)(125.65mm,124.625mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R18-2(176.8mm,135.45mm) on Top And Track (176.75mm,133.683mm)(176.75mm,135.4mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R19-2(176.775mm,120.4mm) on Top And Track (176.75mm,118.95mm)(176.75mm,120.4mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R20-2(176.783mm,133.65mm) on Top And Track (176.75mm,133.683mm)(176.75mm,135.4mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R2-1(52.4mm,58.35mm) on Top And Track (50.2mm,60.725mm)(52.202mm,58.723mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R21-1(120.45mm,122.45mm) on Top And Track (120.525mm,122.45mm)(120.525mm,124.25mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R21-1(120.45mm,122.45mm) on Top And Track (120.65mm,122.05mm)(120.763mm,122.05mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R2-2(54mm,58.35mm) on Top And Track (54.248mm,58.723mm)(56.327mm,60.802mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R22-1(125.7mm,122.45mm) on Top And Track (125.65mm,122.85mm)(125.65mm,124.625mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R22-2(127.3mm,122.45mm) on Top And Track (127.3mm,122.525mm)(128.675mm,122.525mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R23-1(150.9mm,101.675mm) on Top And Track (150.65mm,101.625mm)(153.9mm,101.625mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R24-1(150.9mm,98.475mm) on Top And Track (140.3mm,98.5mm)(150.825mm,98.5mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R24-1(150.9mm,98.475mm) on Top And Track (150.9mm,98.45mm)(153.875mm,98.45mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R31-1(135.4mm,78.825mm) on Top And Track (134.05mm,79.95mm)(134.975mm,79.025mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R31-2(135.4mm,77.225mm) on Top And Track (133.4mm,75.4mm)(135mm,77mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R32-1(101.575mm,105.875mm) on Top And Track (100.5mm,106.2mm)(101.3mm,106.2mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R32-2(103.175mm,105.875mm) on Top And Track (103.4mm,105.8mm)(113.025mm,105.8mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R33-2(103.2mm,102.7mm) on Top And Track (102.45mm,101.85mm)(103.175mm,102.575mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R33-2(103.2mm,102.7mm) on Top And Track (103.225mm,102.6mm)(111.2mm,102.6mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R34-1(101.575mm,99.15mm) on Top And Track (100.475mm,99.175mm)(101.55mm,99.175mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R34-2(103.175mm,99.15mm) on Top And Track (103.225mm,99.2mm)(111.25mm,99.2mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R35-2(101.6mm,104.3mm) on Top And Track (101.281mm,104.181mm)(101.3mm,104.2mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R38-2(137.775mm,64.325mm) on Top And Track (136.9mm,63.7mm)(137.325mm,64.125mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R41-1(152.925mm,62.7mm) on Top And Track (150.45mm,62.725mm)(152.925mm,62.725mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R41-1(152.925mm,62.7mm) on Top And Track (152.925mm,62.725mm)(154.675mm,62.725mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R42-1(150.45mm,62.7mm) on Top And Track (147.825mm,62.725mm)(150.45mm,62.725mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R42-1(150.45mm,62.7mm) on Top And Track (150.45mm,62.725mm)(152.925mm,62.725mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R47-2(86.825mm,31.675mm) on Top And Track (84.725mm,29.35mm)(86.625mm,31.25mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R48-1(88.4mm,25.675mm) on Top And Track (88.55mm,25.825mm)(95.825mm,25.825mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R48-2(86.8mm,25.675mm) on Top And Track (80.85mm,25.55mm)(86.675mm,25.55mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R5-2(56.7mm,61mm) on Top And Track (54.248mm,58.723mm)(56.327mm,60.802mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R7-2(176.775mm,122.325mm) on Top And Track (176.783mm,122.671mm)(176.783mm,125.925mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad R8-1(184.8mm,45.75mm) on Top And Track (184.5mm,46.25mm)(184.5mm,53.4mm) on Top Not Allowed Angle in corner for track
-   Violation between SMD Entry Constraint: Between Pad R8-1(184.8mm,45.75mm) on Top And Track (184.5mm,46.25mm)(184.8mm,45.95mm) on Top Not Allowed Angle in corner for track
-   Violation between SMD Entry Constraint: Between Pad R9-2(176.8mm,116.4mm) on Top And Track (176.775mm,116.875mm)(176.775mm,118.925mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad VT1-1(61.6mm,61.975mm) on Top And Track (61.7mm,62.05mm)(61.7mm,93mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad VT1-2(59.3mm,62.975mm) on Top And Track (59.275mm,63mm)(59.275mm,66.7mm) on Top Track Entry to PAD from not centre of Side
-   Violation between SMD Entry Constraint: Between Pad VT1-3(59.3mm,60.975mm) on Top And Track (56.5mm,61mm)(59.275mm,61mm) on Top Track Entry to PAD from not centre of Side
-Rule Violations :119
+Processing Rule : SMD To Corner (Distance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : SMD To Plane Constraint (Distance=0mm) (All)
+Rule Violations :0
+
+Processing Rule : SMD Neck-Down Constraint (Percent=100%) (All)
+Rule Violations :0
+
+Processing Rule : SMD Entry (Side = Allowed) (Corner = Allowed) (Any Angle = Allowed) (Ignore First Corner = Allowed)
+Rule Violations :0
 
 Processing Rule : Power Plane Connect Rule(Relief Connect )(Expansion=0.2mm) (Conductor Width=0.3mm) (Air Gap=0.2mm) (Entries=4) (All)
 Rule Violations :0
@@ -268,18 +153,14 @@ Processing Rule : Hole To Hole Clearance (Gap=0.25mm) (All),(All)
 Rule Violations :0
 
 Processing Rule : Minimum Solder Mask Sliver (Gap=0.15mm) (All),(All)
-   Violation between Minimum Solder Mask Sliver Constraint: (0.122mm < 0.15mm) Between Via (158.4mm,118.9mm) from Top to Bottom And Via (159mm,119.6mm) from Top to Bottom [Top Solder] Mask Sliver [0.122mm] / [Bottom Solder] Mask Sliver [0.122mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.122mm < 0.15mm) Between Via (159.7mm,124.4mm) from Top to Bottom And Via (160.3mm,125.1mm) from Top to Bottom [Top Solder] Mask Sliver [0.122mm] / [Bottom Solder] Mask Sliver [0.122mm]
-   Violation between Minimum Solder Mask Sliver Constraint: (0.122mm < 0.15mm) Between Via (170.7mm,118.9mm) from Top to Bottom And Via (171.4mm,119.5mm) from Top to Bottom [Top Solder] Mask Sliver [0.122mm] / [Bottom Solder] Mask Sliver [0.122mm]
-Rule Violations :3
+Rule Violations :0
 
 Processing Rule : Silk To Solder Mask (Clearance=0.15mm) (IsPad),(All)
    Violation between Silk To Solder Mask Clearance Constraint: (0mm < 0.15mm) Between Pad R21-1(120.45mm,122.45mm) on Top And Text "R11" (119.025mm,122.281mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad R21-1(120.45mm,122.45mm) on Top And Text "R12" (120.775mm,122.295mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad R21-2(118.85mm,122.45mm) on Top And Text "R11" (119.025mm,122.281mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
    Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad VD4-2(153.9mm,101.625mm) on Multi-Layer And Text "R23" (152.15mm,103.874mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-   Violation between Silk To Solder Mask Clearance Constraint: (Collision < 0.15mm) Between Pad VD5-2(153.875mm,98.45mm) on Multi-Layer And Text "R24" (152.075mm,99.397mm) on Top Overlay [Top Overlay] to [Top Solder] clearance [0mm]
-Rule Violations :5
+Rule Violations :4
 
 Processing Rule : Silk to Silk (Clearance=0.15mm) (All),(All)
    Violation between Silk To Silk Clearance Constraint: (Collision < 0.15mm) Between Text "R12" (120.775mm,122.295mm) on Top Overlay And Text "R21" (121.266mm,122.05mm) on Top Overlay Silk Text to Silk Clearance [0mm]
@@ -287,40 +168,7 @@ Processing Rule : Silk to Silk (Clearance=0.15mm) (All),(All)
 Rule Violations :2
 
 Processing Rule : Net Antennae (Tolerance=0mm) (All)
-   Violation between Net Antennae: Via (100.475mm,102.7mm) from Top to Bottom 
-   Violation between Net Antennae: Via (100.475mm,99.175mm) from Top to Bottom 
-   Violation between Net Antennae: Via (100.5mm,106.2mm) from Top to Bottom 
-   Violation between Net Antennae: Via (104.05mm,46.425mm) from Top to Bottom 
-   Violation between Net Antennae: Via (105.825mm,46.45mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.225mm,108.825mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.25mm,101.575mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.25mm,98.575mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.275mm,103.225mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.275mm,96.85mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.275mm,99.85mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.2mm,110.55mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.3mm,93.6mm) from Top to Bottom 
-   Violation between Net Antennae: Via (107.3mm,95.125mm) from Top to Bottom 
-   Violation between Net Antennae: Via (117.475mm,122.45mm) from Top to Bottom 
-   Violation between Net Antennae: Via (127.7mm,79.45mm) from Top to Bottom 
-   Violation between Net Antennae: Via (129.475mm,79.45mm) from Top to Bottom 
-   Violation between Net Antennae: Via (131.7mm,79.45mm) from Top to Bottom 
-   Violation between Net Antennae: Via (133.125mm,61.6mm) from Top to Bottom 
-   Violation between Net Antennae: Via (133.475mm,79.45mm) from Top to Bottom 
-   Violation between Net Antennae: Via (134.9mm,61.6mm) from Top to Bottom 
-   Violation between Net Antennae: Via (146.85mm,42.475mm) from Top to Bottom 
-   Violation between Net Antennae: Via (147.05mm,70.8mm) from Top to Bottom 
-   Violation between Net Antennae: Via (147.075mm,23.05mm) from Top to Bottom 
-   Violation between Net Antennae: Via (147.075mm,27.2mm) from Top to Bottom 
-   Violation between Net Antennae: Via (149.75mm,106.65mm) from Top to Bottom 
-   Violation between Net Antennae: Via (149.75mm,108.4mm) from Top to Bottom 
-   Violation between Net Antennae: Via (149.8mm,97.425mm) from Top to Bottom 
-   Violation between Net Antennae: Via (152.625mm,103.25mm) from Top to Bottom 
-   Violation between Net Antennae: Via (51.6mm,74.95mm) from Top to Bottom 
-   Violation between Net Antennae: Via (56.7mm,63.925mm) from Top to Bottom 
-   Violation between Net Antennae: Via (87.95mm,39.15mm) from Top to Bottom 
-   Violation between Net Antennae: Via (89.725mm,39.175mm) from Top to Bottom 
-Rule Violations :33
+Rule Violations :0
 
 Processing Rule : Board Clearance Constraint (Gap=0mm) ((OnMid        or OnMultiLayer) and not IsKeepOut)
 Rule Violations :0
@@ -328,22 +176,22 @@ Rule Violations :0
 Processing Rule : Board Clearance Constraint (Gap=0mm) (OnTopLayer or OnBottomLayer)
 Rule Violations :0
 
-Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.8mm, Vertical Gap = 0mm ) (ParameterValue('ClassName')='CHIP_L'),(All) 
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 1.2mm, Vertical Gap = 0.2mm ) (HasFootprint('2Ñ127Ä-1') or HasFootprint('3Ë341Á')),(All) 
 Rule Violations :0
 
-Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.59mm, Vertical Gap = 0mm ) (ParameterValue('ClassName')='CHIP'),(ParameterValue('ClassName')<>'TH') 
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 1.6mm, Vertical Gap = 0.2mm ) ((HasFootprint('ÑÍÏ347-20ÂÏ22-Â') OR HasFootprint('ÑÍÏ268-25ÐÏ32-1-4-Â') OR HasFootprint('ÑÍÏ268-9ÂÏ32-1-4-Â') OR HasFootprint('ÃÐÏÌ9-62ØÓ2-Â') OR HasFootprint('DS1040-02RN') OR HasFootprint('HYR-1149'))),(All) 
 Rule Violations :0
 
-Processing Rule : Component Clearance Constraint ( Horizontal Gap = 1.6mm, Vertical Gap = 0mm ) (ParameterValue('Name')='Ðàçúåìû'),(All) 
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.2mm, Vertical Gap = 0.2mm ) (HasFootprint('RESC1608X05N (0603)')),(All) 
 Rule Violations :0
 
-Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.99mm, Vertical Gap = 0mm ) (ParameterValue('ClassName')='SMT'),(All) 
+Processing Rule : Component Clearance Constraint ( Horizontal Gap = 0.8mm, Vertical Gap = 0.2mm ) (All),(All) 
 Rule Violations :0
 
 Processing Rule : Height Constraint (Min=0mm) (Max=25.4mm) (Prefered=12.7mm) (All)
 Rule Violations :0
 
 
-Violations Detected : 241
+Violations Detected : 86
 Waived Violations : 0
-Time Elapsed        : 00:00:08
+Time Elapsed        : 00:00:07
