@@ -1,0 +1,38 @@
+Removed Pin From Net: NetName=Имп. 3МГц Pin=R1-2
+Removed Pin From Net: NetName=Имп. 0 Pin=R2-2
+Removed Pin From Net: NetName=Имп. 1 Pin=R3-2
+Removed Pin From Net: NetName=Имп. 2 Pin=R4-2
+Removed Pin From Net: NetName=Имп. 3 Pin=R5-2
+Removed Pin From Net: NetName=Имп. 4 Pin=R6-2
+Removed Pin From Net: NetName=Имп. 5 Pin=R7-2
+Removed Pin From Net: NetName=Имп. 6 Pin=R8-2
+Removed Pin From Net: NetName=Имп. ПЗ АПД Pin=R9-2
+Removed Pin From Net: NetName=Имп. 1 ПРД 1к Pin=R10-2
+Removed Pin From Net: NetName=Имп. 1 ПРД 2к Pin=R11-2
+Removed Pin From Net: NetName=Призн. 1мкс Pin=R12-2
+Removed Pin From Net: NetName=Призн. 2мкс Pin=R13-2
+Removed Pin From Net: NetName=+27В 2мкс Pin=R14-2
+Removed Pin From Net: NetName=Лог.1 Pin=R15-2
+Removed Pin From Net: NetName=Внеш. зап. 15В Pin=R16-2
+Removed Pin From Net: NetName=Внеш. зап. лог. 1 Pin=R17-2
+Removed Pin From Net: NetName=Режим Pin=R18-2
+Removed Pin From Net: NetName=+27В вкл. 2мкс Pin=R19-2
+Added Pin To Net: NetName=Имп. 0 Pin=R1-2
+Added Pin To Net: NetName=Имп. 2 Pin=R2-2
+Added Pin To Net: NetName=Имп. 4 Pin=R3-2
+Added Pin To Net: NetName=Имп. 6 Pin=R4-2
+Added Pin To Net: NetName=Имп. 3МГц Pin=R5-2
+Added Pin To Net: NetName=Имп. 1 ПРД 1к Pin=R6-2
+Added Pin To Net: NetName=Призн. 1мкс Pin=R7-2
+Added Pin To Net: NetName=Призн. 2мкс Pin=R8-2
+Added Pin To Net: NetName=Лог.1 Pin=R9-2
+Added Pin To Net: NetName=Внеш. зап. 15В Pin=R10-2
+Added Pin To Net: NetName=Внеш. зап. лог. 1 Pin=R11-2
+Added Pin To Net: NetName=+27В 2мкс Pin=R12-2
+Added Pin To Net: NetName=+27В вкл. 2мкс Pin=R13-2
+Added Pin To Net: NetName=Имп. 1 Pin=R14-2
+Added Pin To Net: NetName=Имп. 3 Pin=R15-2
+Added Pin To Net: NetName=Режим Pin=R16-2
+Added Pin To Net: NetName=Имп. 5 Pin=R17-2
+Added Pin To Net: NetName=Имп. ПЗ АПД Pin=R18-2
+Added Pin To Net: NetName=Имп. 1 ПРД 2к Pin=R19-2

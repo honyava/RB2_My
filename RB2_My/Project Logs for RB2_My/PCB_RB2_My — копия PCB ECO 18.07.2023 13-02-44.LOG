@@ -1,0 +1,74 @@
+Removed Pin From Net: NetName=Призн. 2мкс Pin=R8-2
+Removed Pin From Net: NetName=Лог.1 Pin=R9-2
+Removed Pin From Net: NetName=Внеш. зап. 15В Pin=R10-2
+Removed Pin From Net: NetName=Внеш. зап. лог. 1 Pin=R11-2
+Removed Pin From Net: NetName=+27В 2мкс Pin=R12-2
+Removed Pin From Net: NetName=+27В вкл. 2мкс Pin=R13-2
+Removed Pin From Net: NetName=GND Pin=X1-20
+Removed Pin From Net: NetName=+3,3В Pin=X1-21
+Change Component Designator: OldDesignator=R14 NewDesignator=R11
+Change Component Designator: OldDesignator=R15 NewDesignator=R12
+Change Component Designator: OldDesignator=R16 NewDesignator=R13
+Change Component Designator: OldDesignator=R17 NewDesignator=R14
+Change Component Designator: OldDesignator=R18 NewDesignator=R15
+Change Component Designator: OldDesignator=R19 NewDesignator=R16
+Added Component: Designator=R17(RESC1608X05N (0603))
+Add component (AddParameter): Name = "Manufacturer"; Value = "АЛЯР.434110.005ТУ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "Резистор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name_main"; Value = "Р1-12-0,1-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nameSuf"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Units"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0"; VariantName = "[No Variations]"
+Added Component: Designator=R18(RESC1608X05N (0603))
+Add component (AddParameter): Name = "Manufacturer"; Value = "АЛЯР.434110.005ТУ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "Резистор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name_main"; Value = "Р1-12-0,1-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nameSuf"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Units"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0"; VariantName = "[No Variations]"
+Added Component: Designator=R19(RESC1608X05N (0603))
+Add component (AddParameter): Name = "Manufacturer"; Value = "АЛЯР.434110.005ТУ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Name"; Value = "Резистор"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name_main"; Value = "Р1-12-0,1-"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "nameSuf"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Tolerance"; Value = "5%"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Units"; Value = ""; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=Лог.1 Pin=R8-2
+Added Pin To Net: NetName=Внеш. зап. лог. 1 Pin=R9-2
+Added Pin To Net: NetName=+27В вкл. 2мкс Pin=R10-2
+Added Pin To Net: NetName=Призн. 2мкс Pin=R17-2
+Added Pin To Net: NetName=Внеш. зап. 15В Pin=R18-2
+Added Pin To Net: NetName=+27В 2мкс Pin=R19-2
+Added Pin To Net: NetName=GND Pin=X1-23
+Added Pin To Net: NetName=+3,3В Pin=X1-24
+Change Net Name : Old Net Name=NetR14_1 New Net Name=NetR11_1
+Change Net Name : Old Net Name=NetR15_1 New Net Name=NetR12_1
+Change Net Name : Old Net Name=NetR16_1 New Net Name=NetR13_1
+Change Net Name : Old Net Name=NetR17_1 New Net Name=NetR14_1
+Change Net Name : Old Net Name=NetR18_1 New Net Name=NetR15_1
+Change Net Name : Old Net Name=NetR19_1 New Net Name=NetR16_1
+Added Pin To Net: NetName=NetR17_1 Pin=R17-1
+Added Pin To Net: NetName=NetR17_1 Pin=X1-20
+Added Net: Name=NetR17_1
+Added Pin To Net: NetName=NetR18_1 Pin=R18-1
+Added Pin To Net: NetName=NetR18_1 Pin=X1-21
+Added Net: Name=NetR18_1
+Added Pin To Net: NetName=NetR19_1 Pin=R19-1
+Added Pin To Net: NetName=NetR19_1 Pin=X1-22
+Added Net: Name=NetR19_1
+Added Member To Class: ClassName=RB2_My Member=Component R1 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R2 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R3 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R4 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R6 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R7 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R10 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R12 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R13 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R16 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R17 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R18 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R19 Р1-12-0,1-05%

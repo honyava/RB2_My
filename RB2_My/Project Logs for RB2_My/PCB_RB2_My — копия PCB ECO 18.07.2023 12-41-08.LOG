@@ -1,0 +1,71 @@
+Removed Pin From Net: NetName=Имп. 0 Pin=R1-2
+Removed Pin From Net: NetName=Имп. 2 Pin=R2-2
+Removed Pin From Net: NetName=Имп. 4 Pin=R3-2
+Removed Pin From Net: NetName=Имп. 6 Pin=R4-2
+Removed Pin From Net: NetName=Имп. 3МГц Pin=R5-2
+Removed Pin From Net: NetName=Имп. 1 ПРД 1к Pin=R6-2
+Removed Pin From Net: NetName=Призн. 1мкс Pin=R7-2
+Removed Pin From Net: NetName=Призн. 2мкс Pin=R8-2
+Removed Pin From Net: NetName=Лог.1 Pin=R9-2
+Removed Pin From Net: NetName=Внеш. зап. 15В Pin=R10-2
+Removed Pin From Net: NetName=Внеш. зап. лог. 1 Pin=R11-2
+Removed Pin From Net: NetName=+27В 2мкс Pin=R12-2
+Removed Pin From Net: NetName=+27В вкл. 2мкс Pin=R13-2
+Removed Pin From Net: NetName=Имп. 1 Pin=R14-2
+Removed Pin From Net: NetName=Имп. 3 Pin=R15-2
+Removed Pin From Net: NetName=Режим Pin=R16-2
+Removed Pin From Net: NetName=Имп. 5 Pin=R17-2
+Removed Pin From Net: NetName=Имп. ПЗ АПД Pin=R18-2
+Removed Pin From Net: NetName=Имп. 1 ПРД 2к Pin=R19-2
+Change Component Designator: OldDesignator=R1 NewDesignator=R2
+Change Component Designator: OldDesignator=R2 NewDesignator=R4
+Change Component Designator: OldDesignator=R3 NewDesignator=R6
+Change Component Designator: OldDesignator=R4 NewDesignator=R8
+Change Component Designator: OldDesignator=R5 NewDesignator=R1
+Change Component Designator: OldDesignator=R6 NewDesignator=R10
+Change Component Designator: OldDesignator=R7 NewDesignator=R12
+Change Component Designator: OldDesignator=R8 NewDesignator=R13
+Change Component Designator: OldDesignator=R9 NewDesignator=R15
+Change Component Designator: OldDesignator=R10 NewDesignator=R16
+Change Component Designator: OldDesignator=R11 NewDesignator=R17
+Change Component Designator: OldDesignator=R12 NewDesignator=R14
+Change Component Designator: OldDesignator=R13 NewDesignator=R19
+Change Component Designator: OldDesignator=R14 NewDesignator=R3
+Change Component Designator: OldDesignator=R15 NewDesignator=R5
+Change Component Designator: OldDesignator=R16 NewDesignator=R18
+Change Component Designator: OldDesignator=R17 NewDesignator=R7
+Change Component Designator: OldDesignator=R18 NewDesignator=R9
+Change Component Designator: OldDesignator=R19 NewDesignator=R11
+Added Pin To Net: NetName=Имп. 0 Pin=R1-2
+Added Pin To Net: NetName=Имп. 2 Pin=R2-2
+Added Pin To Net: NetName=Имп. 4 Pin=R3-2
+Added Pin To Net: NetName=Имп. 6 Pin=R4-2
+Added Pin To Net: NetName=Имп. 3МГц Pin=R5-2
+Added Pin To Net: NetName=Имп. 1 ПРД 1к Pin=R6-2
+Added Pin To Net: NetName=Призн. 1мкс Pin=R7-2
+Added Pin To Net: NetName=Призн. 2мкс Pin=R8-2
+Added Pin To Net: NetName=Лог.1 Pin=R9-2
+Added Pin To Net: NetName=Внеш. зап. 15В Pin=R10-2
+Added Pin To Net: NetName=Внеш. зап. лог. 1 Pin=R11-2
+Added Pin To Net: NetName=+27В 2мкс Pin=R12-2
+Added Pin To Net: NetName=+27В вкл. 2мкс Pin=R13-2
+Added Pin To Net: NetName=Имп. 1 Pin=R14-2
+Added Pin To Net: NetName=Имп. 3 Pin=R15-2
+Added Pin To Net: NetName=Режим Pin=R16-2
+Added Pin To Net: NetName=Имп. 5 Pin=R17-2
+Added Pin To Net: NetName=Имп. ПЗ АПД Pin=R18-2
+Added Pin To Net: NetName=Имп. 1 ПРД 2к Pin=R19-2
+Added Member To Class: ClassName=RB2_My Member=Component R2 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R4 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R5 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R6 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R7 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R10 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R12 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R13 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R14 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R15 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R16 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R17 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component R19 Р1-12-0,1-05%
+Added Member To Class: ClassName=RB2_My Member=Component X1 СНП268-25РП32-1-3-В
