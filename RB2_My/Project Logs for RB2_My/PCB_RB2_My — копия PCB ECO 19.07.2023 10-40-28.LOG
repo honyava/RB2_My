@@ -1,0 +1,6 @@
+Added Component: Designator=X1(ямо268-25по32-1-4-б)
+Add component (AddParameter): Name = "manufacture"; Value = "аяюп.430420.014рс"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name"; Value = "пЮГЗЕЛШ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name_main"; Value = "ямо268-25по32-1-3-б"; VariantName = "[No Variations]"
+Added Member To Class: ClassName=RB2_My Member=Component X1 ямо268-25по32-1-3-б
+Added Room: Name=RB2_My

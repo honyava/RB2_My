@@ -1,0 +1,42 @@
+Added Component: Designator=X1(ÑÍÏ268-25ĞÏ32-1-4-Â)
+Add component (AddParameter): Name = "manufacture"; Value = "ÁÑÀĞ.430420.014ÒÓ"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name"; Value = "Ğàçúåìû"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "name_main"; Value = "ÑÍÏ268-25ĞÏ32-1-3-Â"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=+27Â 2ìêñ Pin=R1-2
+Added Pin To Net: NetName=Ëîã.1 Pin=R2-2
+Added Pin To Net: NetName=Ïğèçí. 1ìêñ Pin=R3-2
+Added Pin To Net: NetName=Èìï. 1 ÏĞÄ 1ê Pin=R4-2
+Added Pin To Net: NetName=Èìï. 6 Pin=R6-2
+Added Pin To Net: NetName=Èìï. 3 Pin=R7-2
+Added Pin To Net: NetName=Èìï. 0 Pin=R8-2
+Added Pin To Net: NetName=Âíåø. çàï. 15Â Pin=R11-2
+Added Pin To Net: NetName=Ïğèçí. 2ìêñ Pin=R12-2
+Added Pin To Net: NetName=Èìï. 1 ÏĞÄ 2ê Pin=R13-2
+Added Pin To Net: NetName=Èìï. ÏÇ ÀÏÄ Pin=R14-2
+Added Pin To Net: NetName=Èìï. 5 Pin=R15-2
+Added Pin To Net: NetName=Èìï. 4 Pin=R16-2
+Added Pin To Net: NetName=Èìï. 2 Pin=R17-2
+Added Pin To Net: NetName=Èìï. 1 Pin=R18-2
+Added Pin To Net: NetName=Ğåæèì Pin=R19-2
+Added Pin To Net: NetName=NetR1_1 Pin=X1-1
+Added Pin To Net: NetName=NetR2_1 Pin=X1-2
+Added Pin To Net: NetName=NetR3_1 Pin=X1-3
+Added Pin To Net: NetName=NetR4_1 Pin=X1-4
+Added Pin To Net: NetName=NetR5_1 Pin=X1-5
+Added Pin To Net: NetName=NetR6_1 Pin=X1-6
+Added Pin To Net: NetName=NetR7_1 Pin=X1-7
+Added Pin To Net: NetName=NetR8_1 Pin=X1-8
+Added Pin To Net: NetName=NetR9_1 Pin=X1-9
+Added Pin To Net: NetName=NetR10_1 Pin=X1-10
+Added Pin To Net: NetName=NetR11_1 Pin=X1-14
+Added Pin To Net: NetName=NetR12_1 Pin=X1-15
+Added Pin To Net: NetName=NetR13_1 Pin=X1-16
+Added Pin To Net: NetName=NetR14_1 Pin=X1-17
+Added Pin To Net: NetName=NetR15_1 Pin=X1-18
+Added Pin To Net: NetName=NetR16_1 Pin=X1-19
+Added Pin To Net: NetName=NetR17_1 Pin=X1-20
+Added Pin To Net: NetName=NetR18_1 Pin=X1-21
+Added Pin To Net: NetName=NetR19_1 Pin=X1-22
+Added Pin To Net: NetName=GND Pin=X1-23
+Added Pin To Net: NetName=+3,3Â Pin=X1-24
+Added Member To Class: ClassName=RB2_My Member=Component X1 ÑÍÏ268-25ĞÏ32-1-3-Â
