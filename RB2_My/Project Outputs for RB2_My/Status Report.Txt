@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : Project [RB2_My.PrjPcb]
+   Generated File[PCB_RB2_My-Plated.TXT]
+   Generated File[PCB_RB2_My.LDP]
+   Generated File[PCB_RB2_My.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 15:04:31 On 24.07.2023

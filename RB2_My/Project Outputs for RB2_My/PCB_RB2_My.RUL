@@ -1,0 +1,8 @@
+DRC Rules Export File for PCB: D:\Users\User\Documents\GitHub\RB2_My\RB2_My\PCB_RB2_My.PcbDoc
+RuleKind=MinimumAnnularRing|RuleName=Minimum AR PAD Standart|Scope=Board|Minimum=7.87
+RuleKind=MinimumAnnularRing|RuleName=Minimum AR VIA Standart|Scope=Board|Minimum=5.91
+RuleKind=ShortCircuit|RuleName=ShortCircuit|Scope=Board|Allowed=0
+RuleKind=SolderMaskExpansion|RuleName=SolderMaskExpansion Std|Scope=Board|Minimum=1.97
+RuleKind=Width|RuleName=Width Std|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=Clearance Sdt|Scope=Board|Minimum=4.92
+RuleKind=Clearance|RuleName=Clearance KeepOut|Scope=Board|Minimum=19.69
