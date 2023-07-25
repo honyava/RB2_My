@@ -31,7 +31,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=0
-OutputPath=
+OutputPath=Project Outputs for RB2_My
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -132,7 +132,7 @@ GenerateClassCluster=0
 DocumentUniqueId=FIPGFHHE
 
 [Document6]
-DocumentPath=CAMtastic1.Cam
+DocumentPath=RB2_My.OutJob
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -149,7 +149,24 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document7]
-DocumentPath=CAMtastic2.Cam
+DocumentPath=Assembly.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document8]
+DocumentPath=RB2_My.BomDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -170,58 +187,26 @@ DocumentPath=Project Outputs for RB2_My\Design Rule Check - PCB_RB2_My.html
 DItemRevisionGUID=
 
 [GeneratedDocument2]
-DocumentPath=Project Outputs for RB2_My\Design Rule Check - PCB_RB2_My — копия.html
-DItemRevisionGUID=
-
-[GeneratedDocument3]
-DocumentPath=Project Outputs for RB2_My\PCB_RB2_My-Plated.TXT
-DItemRevisionGUID=
-
-[GeneratedDocument4]
 DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.DRR
 DItemRevisionGUID=
 
-[GeneratedDocument5]
+[GeneratedDocument3]
 DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.EXTREP
 DItemRevisionGUID=
 
-[GeneratedDocument6]
-DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.GBL
-DItemRevisionGUID=
-
-[GeneratedDocument7]
-DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.GBS
-DItemRevisionGUID=
-
-[GeneratedDocument8]
-DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.GKO
-DItemRevisionGUID=
-
-[GeneratedDocument9]
-DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.GTL
-DItemRevisionGUID=
-
-[GeneratedDocument10]
-DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.GTO
-DItemRevisionGUID=
-
-[GeneratedDocument11]
-DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.GTS
-DItemRevisionGUID=
-
-[GeneratedDocument12]
+[GeneratedDocument4]
 DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.LDP
 DItemRevisionGUID=
 
-[GeneratedDocument13]
+[GeneratedDocument5]
 DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.REP
 DItemRevisionGUID=
 
-[GeneratedDocument14]
+[GeneratedDocument6]
 DocumentPath=Project Outputs for RB2_My\PCB_RB2_My.RUL
 DItemRevisionGUID=
 
-[GeneratedDocument15]
+[GeneratedDocument7]
 DocumentPath=RB.cmp
 DItemRevisionGUID=
 
@@ -272,7 +257,7 @@ SCH_HasExpandLogicalToPhysicalSheets=-1
 SaveSettingsToOutJob=-1
 
 [Generic_EDE]
-OutputDir=
+OutputDir=Project Outputs for RB2_My
 
 [OutputGroup1]
 Name=Netlist Outputs

@@ -1,0 +1,10 @@
+Output: bom
+Type  : BOM
+From  : Variant [[No Variations]] of Project [RB2_My.PrjPcb]
+   Generated File[bom-RB2_My.csv]
+
+
+Files Generated   : 1
+Documents Printed : 0
+
+Finished Output Generation At 12:07:42 On 25.07.2023
