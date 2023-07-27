@@ -1,5 +1,5 @@
 ----------------------------------------------------------------------------------------------------------------------------------
-NCDrill File Report For: PCB_RB2_My.PcbDoc   26.07.2023  12:20:57
+NCDrill File Report For: PCB_RB2_My.PcbDoc   27.07.2023  13:10:38
 ----------------------------------------------------------------------------------------------------------------------------------
 
 Layer Pair : Top to Bottom
@@ -7,7 +7,7 @@ ASCII RoundHoles File : PCB_RB2_My.TXT
 
 Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
 ----------------------------------------------------------------------------------------------------------------------------------
-T1      0.3mm (12mil)                                             Round             3884      PTH        9713.12mm (382.41inch)
+T1      0.3mm (12mil)                                             Round             3884      PTH        9713.49mm (382.42inch)
 T2      0.8mm (31mil)                                             Round             16        PTH        214.82mm (8.46inch)
 T3      1mm (39mil)             +0mm (0mil)/-0.1mm (4mil)         Round             6         PTH        178.45mm (7.03inch)
 T4      1mm (39mil)                                               Round             66        PTH        483.37mm (19.03inch)
